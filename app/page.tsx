@@ -1,14 +1,3 @@
-// Home page — /
-// Sections in order:
-// 1. HeroSection
-// 2. AboutPreview
-// 3. ProductsPreview
-// 4. ExportProcess
-// 5. WhyChooseUs
-// 6. IndustriesPreview
-// 7. ContactCTA
-// TODO: Replace placeholder components with full implementations
-
 import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import AboutPreview from "@/components/home/AboutPreview";
