@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter text-brown bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-brown font-inter font-semibold px-6 py-3 rounded hover:bg-yellow-600 transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white font-inter font-semibold px-6 py-3 rounded hover:bg-white hover:text-forest transition-colors duration-200;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
