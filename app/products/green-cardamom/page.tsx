@@ -47,7 +47,7 @@ export default function GreenCardamomPage() {
       <ProductDetailHero
         title="Green Cardamom"
         subtitle="Aromatic Gems from the Hills of Idukki — handpicked for vibrant colour, intense aroma, and superior freshness."
-        imageSrc="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=1600&q=80"
+        imageSrc="https://images.unsplash.com/photo-1547592180-85f173990554?w=1600&q=80"
         imageAlt="Green cardamom pods fresh from the highland spice gardens of Idukki, Kerala"
         breadcrumb="Green Cardamom"
       />
