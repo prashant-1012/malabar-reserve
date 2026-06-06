@@ -27,7 +27,7 @@ export default function SectionHeading({
       )}
 
       <h2
-        className={`font-playfair font-bold text-3xl md:text-4xl lg:text-5xl leading-tight ${
+        className={`font-playfair font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight ${
           isLight ? "text-white" : "text-brown"
         }`}
       >

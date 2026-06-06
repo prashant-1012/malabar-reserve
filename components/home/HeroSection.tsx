@@ -39,7 +39,7 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-playfair font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-5">
+          <h1 className="font-playfair font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-5">
             Premium Indian Spices,{" "}
             <span className="text-gold italic">Sourced with Integrity</span>
           </h1>
@@ -66,14 +66,14 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          {/* Feature icons */}
-          <div className="flex flex-wrap gap-x-6 gap-y-4">
+          {/* Feature icons — 2-col on mobile, row on md+ */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-3 md:gap-x-6 md:gap-y-4">
             {features.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/10 border border-gold/40 flex items-center justify-center flex-shrink-0">
                   <Icon size={14} className="text-gold" />
                 </div>
-                <span className="font-inter text-xs text-white/80">{label}</span>
+                <span className="font-inter text-xs text-white/80 leading-snug">{label}</span>
               </div>
             ))}
           </div>

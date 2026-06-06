@@ -48,7 +48,7 @@ export default function ProductDetailHero({
             <div className="h-0.5 w-4 bg-gold/40" />
           </div>
 
-          <h1 className="font-playfair font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+          <h1 className="font-playfair font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
             {title}
           </h1>
           <p className="font-inter text-base text-white/70 max-w-lg leading-relaxed">

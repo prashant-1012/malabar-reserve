@@ -113,7 +113,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream/60" />
 
         {/* Floating caption card */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-lg px-6 py-3 shadow-lg border border-gold/20 text-center whitespace-nowrap">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-lg px-4 sm:px-6 py-3 shadow-lg border border-gold/20 text-center w-[90%] sm:w-auto max-w-sm sm:max-w-none">
           <p className="font-playfair italic text-brown text-sm">
             The Backwaters of Kerala — the heart of Malabar Reserve
           </p>

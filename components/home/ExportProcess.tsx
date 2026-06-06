@@ -53,8 +53,8 @@ export default function ExportProcess() {
         {/* Heading with flanking ornaments */}
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-4 mb-3">
-            {/* Left ornament */}
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            {/* Left ornament — hidden on very small screens */}
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" className="hidden sm:block flex-shrink-0">
               <path d="M14 2C14 2 6 8 6 16C6 20.4 9.6 24 14 24C18.4 24 22 20.4 22 16C22 8 14 2 14 2Z" fill="#2D4A1E" opacity="0.3" />
               <path d="M14 2C14 2 6 8 6 16C6 20.4 9.6 24 14 24" stroke="#C9A84C" strokeWidth="1" fill="none" />
             </svg>
@@ -63,8 +63,8 @@ export default function ExportProcess() {
               title="Our Export Process"
               align="center"
             />
-            {/* Right ornament */}
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            {/* Right ornament — hidden on very small screens */}
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" className="hidden sm:block flex-shrink-0">
               <path d="M14 2C14 2 22 8 22 16C22 20.4 18.4 24 14 24C9.6 24 6 20.4 6 16C6 8 14 2 14 2Z" fill="#2D4A1E" opacity="0.3" />
               <path d="M14 2C14 2 22 8 22 16C22 20.4 18.4 24 14 24" stroke="#C9A84C" strokeWidth="1" fill="none" />
             </svg>

@@ -134,7 +134,7 @@ export default function IndustriesPage() {
 
       {/* ── Stats bar ────────────────────────────────────────── */}
       <section className="bg-gold/10 border-y border-gold/20 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
           {stats.map(({ value, label }) => (
             <div key={label} className="flex flex-col gap-1">
               <span className="font-playfair font-bold text-3xl md:text-4xl text-forest">

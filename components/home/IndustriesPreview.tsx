@@ -62,7 +62,7 @@ export default function IndustriesPreview() {
           {industries.map(({ name, icon: Icon, image, alt }) => (
             <div
               key={name}
-              className="group relative h-56 sm:h-64 rounded-xl overflow-hidden cursor-default"
+              className="group relative h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden cursor-default"
             >
               {/* Background image */}
               <Image
