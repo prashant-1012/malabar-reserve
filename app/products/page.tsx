@@ -1,13 +1,16 @@
-// Products page — /products
-// Sections in order:
-// 1. Black Pepper section — text left, image right (/photos-to-use/black-pepper.png)
-// 2. Green Cardamom section — image left (/photos-to-use/green-cardmom.png), text right
-// 3. Cinnamon section — text left, image right (/photos-to-use/cinnamon.png)
-// 4. Packaging Solutions — 6 type cards (pure HTML/CSS, no images)
-// 5. Why Our Packaging Stands Out — 5-icon row
-// TODO: Implement all sections using ProductSection and PackagingSolutions components
-
 import type { Metadata } from "next";
+import { Leaf } from "lucide-react";
+import {
+  Sprout,
+  Award,
+  FlaskConical,
+  Package,
+  Globe,
+  Handshake,
+  Star,
+  Wind,
+  Flame,
+} from "lucide-react";
 import ProductSection from "@/components/products/ProductSection";
 import PackagingSolutions from "@/components/products/PackagingSolutions";
 
@@ -18,42 +21,120 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Products | Malabar Reserve",
     description:
-      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Cinnamon available in bulk and custom packaging.",
+      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Cinnamon in bulk and custom packaging.",
     url: "https://malabarreserve.co/products",
   },
 };
 
 export default function ProductsPage() {
   return (
-    <div>
+    <>
+      {/* ── Page hero banner ─────────────────────────────────── */}
+      <section className="bg-forest py-16 md:py-20 relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25% 50%, #C9A84C 1px, transparent 1px), radial-gradient(circle at 75% 50%, #C9A84C 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-4">
+          <div className="flex items-center gap-3">
+            <div className="h-px w-10 bg-gold/50" />
+            <Leaf size={16} className="text-gold" />
+            <div className="h-px w-10 bg-gold/50" />
+          </div>
+          <span className="font-inter text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Export Catalogue
+          </span>
+          <h1 className="font-playfair font-bold text-4xl sm:text-5xl text-white leading-tight">
+            Our Products
+          </h1>
+          <p className="font-inter text-base text-white/65 max-w-xl leading-relaxed">
+            Three of India&apos;s finest spices, sourced directly from Kerala&apos;s heartland and
+            prepared to the highest export standards.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 1. Black Pepper ──────────────────────────────────── */}
       <ProductSection
+        eyebrow="Product 01"
         title="Black Pepper"
-        description="Placeholder"
-        bullets={[]}
+        description="Known as the King of Spices, our black pepper is sourced from premium growing regions in South India. Bold flavour, rich aroma, and export-grade quality suitable for culinary, retail, and industrial applications."
+        bullets={[
+          "Whole Black Pepper",
+          "Bold Pepper",
+          "FAQ Grade Pepper",
+          "Steam Sterilized Pepper",
+          "Custom Packaging Available",
+        ]}
         imageSrc="/photos-to-use/black-pepper.png"
-        imageAlt="Premium Black Pepper from Kerala"
+        imageAlt="Premium Kerala black pepper in a wooden bowl with scattered peppercorns"
         imagePosition="right"
         href="/products/black-pepper"
+        bgColor="white"
+        featureIcons={[
+          { icon: Sprout, label: "Carefully Sourced From Trusted Farms" },
+          { icon: Award, label: "Export-Grade Quality" },
+          { icon: FlaskConical, label: "Hygienic Processing & Quality Checked" },
+          { icon: Package, label: "Customized Packaging Solutions" },
+          { icon: Globe, label: "Trusted by Customers Worldwide" },
+        ]}
       />
+
+      {/* ── 2. Green Cardamom ────────────────────────────────── */}
       <ProductSection
+        eyebrow="Product 02"
         title="Green Cardamom"
-        description="Placeholder"
-        bullets={[]}
+        description="Handpicked for its vibrant colour, intense aroma, and superior freshness. Ideal for food processing, retail packaging, beverages, and gourmet applications."
+        bullets={[
+          "Alleppey Green Cardamom",
+          "Different Size Grades",
+          "Premium Export Quality",
+          "Bulk & Retail Packing",
+        ]}
         imageSrc="/photos-to-use/green-cardmom.png"
-        imageAlt="Green Cardamom from Idukki, Kerala"
+        imageAlt="Fresh green cardamom pods handpicked from Idukki highlands, Kerala"
         imagePosition="left"
         href="/products/green-cardamom"
+        bgColor="cream"
+        featureIcons={[
+          { icon: Sprout, label: "Handpicked Quality" },
+          { icon: Wind, label: "Rich Aroma & Flavour" },
+          { icon: Award, label: "Export Grade Excellence" },
+          { icon: Package, label: "Carefully Packed for Maximum Freshness" },
+        ]}
       />
+
+      {/* ── 3. Cinnamon ──────────────────────────────────────── */}
       <ProductSection
+        eyebrow="Product 03"
         title="Cinnamon"
-        description="Placeholder"
-        bullets={[]}
+        description="Carefully selected cinnamon with naturally sweet aroma and warm flavour profiles suited for global food and beverage markets."
+        bullets={[
+          "Cinnamon Sticks",
+          "Cinnamon Bark",
+          "Powdered Cinnamon",
+          "Customized Packaging Solutions",
+        ]}
         imageSrc="/photos-to-use/cinnamon.png"
-        imageAlt="Premium Cinnamon sticks"
+        imageAlt="Premium cinnamon sticks bundled and cinnamon powder in a bowl"
         imagePosition="right"
         href="/products/cinnamon"
+        bgColor="white"
+        featureIcons={[
+          { icon: Flame, label: "Naturally Sweet Aroma" },
+          { icon: Star, label: "Carefully Selected & Processed" },
+          { icon: Award, label: "Consistent Quality You Can Trust" },
+          { icon: Package, label: "Custom Packaging Solutions" },
+          { icon: Handshake, label: "Ideal for Global Markets" },
+        ]}
       />
+
+      {/* ── 4 & 5. Packaging Solutions ───────────────────────── */}
       <PackagingSolutions />
-    </div>
+    </>
   );
 }
