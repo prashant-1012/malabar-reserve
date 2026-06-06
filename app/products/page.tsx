@@ -18,11 +18,29 @@ export const metadata: Metadata = {
   title: "Our Products",
   description:
     "Explore Malabar Reserve's premium export spices: Black Pepper, Green Cardamom, and Cinnamon — sourced from Kerala's finest farms.",
+  keywords: [
+    "Indian spices for export",
+    "black pepper wholesale",
+    "green cardamom bulk supply",
+    "cinnamon export",
+    "Kerala spice catalogue",
+    "spice packaging solutions",
+    "private label spices India",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Our Products | Malabar Reserve",
     description:
       "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Cinnamon in bulk and custom packaging.",
     url: "https://malabarreserve.co/products",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Products | Malabar Reserve",
+    description:
+      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Cinnamon in bulk and custom packaging.",
   },
 };
 

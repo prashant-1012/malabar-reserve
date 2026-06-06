@@ -11,11 +11,30 @@ export const metadata: Metadata = {
   title: "Premium Indian Spice Exporters | Malabar Reserve",
   description:
     "Malabar Reserve exports premium Black Pepper, Green Cardamom, and Cinnamon from Kerala's finest spice gardens to global markets. FSSAI & ISO certified.",
+  keywords: [
+    "premium Indian spices",
+    "spice exporter Kerala",
+    "black pepper export India",
+    "cardamom export India",
+    "cinnamon export India",
+    "bulk spice supplier",
+    "FSSAI certified spices",
+    "ISO certified spice exporter",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Malabar Reserve | Premium Indian Spice Exporters",
     description:
       "Premium quality spices sourced directly from Kerala's spice gardens. Trusted by importers and manufacturers worldwide.",
     url: "https://malabarreserve.co",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Malabar Reserve | Premium Indian Spice Exporters",
+    description:
+      "Premium quality spices sourced directly from Kerala's spice gardens. Trusted by importers and manufacturers worldwide.",
   },
 };
 

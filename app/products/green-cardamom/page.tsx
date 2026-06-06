@@ -8,11 +8,29 @@ export const metadata: Metadata = {
   title: "Green Cardamom Export",
   description:
     "Premium Green Cardamom from Idukki, Kerala for export. Aromatic, bold, and FSSAI certified for global food and beverage markets.",
+  keywords: [
+    "green cardamom export India",
+    "Alleppey green cardamom",
+    "Idukki cardamom supplier",
+    "cardamom wholesale India",
+    "cardamom bulk export",
+    "cardamom pods supplier",
+    "Kerala cardamom exporter",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Green Cardamom Export | Malabar Reserve",
     description:
       "Export-quality Green Cardamom from Idukki's high-altitude spice gardens. Custom grades and packaging available.",
     url: "https://malabarreserve.co/products/green-cardamom",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Green Cardamom Export | Malabar Reserve",
+    description:
+      "Export-quality Green Cardamom from Idukki's high-altitude spice gardens. Custom grades and packaging available.",
   },
 };
 

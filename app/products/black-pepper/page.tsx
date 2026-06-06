@@ -8,11 +8,30 @@ export const metadata: Metadata = {
   title: "Black Pepper Export",
   description:
     "Premium Kerala Black Pepper for export — bold, pungent, and FSSAI certified. Whole, Bold, and FAQ grades with custom packaging options.",
+  keywords: [
+    "black pepper export India",
+    "Kerala black pepper wholesale",
+    "whole black pepper supplier",
+    "bold pepper export",
+    "FAQ grade pepper",
+    "steam sterilized pepper",
+    "black pepper bulk supply",
+    "Malabar black pepper",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Black Pepper Export | Malabar Reserve",
     description:
-      "Export-quality Kerala Black Pepper sourced from the Malabar Coast. Available in Tellicherry, ASTA, and custom grades.",
+      "Export-quality Kerala Black Pepper sourced from the Malabar Coast. Whole, Bold, and FAQ grades with custom packaging options.",
     url: "https://malabarreserve.co/products/black-pepper",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Black Pepper Export | Malabar Reserve",
+    description:
+      "Export-quality Kerala Black Pepper sourced from the Malabar Coast. Whole, Bold, and FAQ grades with custom packaging options.",
   },
 };
 

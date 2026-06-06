@@ -17,11 +17,27 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Get in touch with Malabar Reserve for export inquiries, pricing, and custom packaging. We respond within 24 hours.",
+  keywords: [
+    "contact spice exporter India",
+    "spice export inquiry",
+    "bulk spice quote India",
+    "Malabar Reserve contact",
+    "Indian spice supplier inquiry",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Contact Us | Malabar Reserve",
     description:
       "Reach out to Malabar Reserve for your spice export requirements. Email: info@malabarreserve.co",
     url: "https://malabarreserve.co/contact",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Malabar Reserve",
+    description:
+      "Reach out to Malabar Reserve for your spice export requirements. Email: info@malabarreserve.co",
   },
 };
 

@@ -34,7 +34,12 @@ export const metadata: Metadata = {
     "Kerala spices",
     "wholesale spice supplier",
     "Malabar Reserve",
+    "bulk spice export",
+    "spice import India",
+    "FSSAI certified spices",
   ],
+  authors: [{ name: "Malabar Reserve", url: "https://malabarreserve.co" }],
+  category: "Food & Beverage Export",
   openGraph: {
     type: "website",
     siteName: "Malabar Reserve",
@@ -42,8 +47,25 @@ export const metadata: Metadata = {
     description:
       "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
     url: "https://malabarreserve.co",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Malabar Reserve | Premium Indian Spice Exporters",
+    description:
+      "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
   },
   metadataBase: new URL("https://malabarreserve.co"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

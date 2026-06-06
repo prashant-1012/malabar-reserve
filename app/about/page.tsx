@@ -8,11 +8,27 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Malabar Reserve — our story, mission, and commitment to delivering the finest spices from Kerala's heartland to global markets.",
+  keywords: [
+    "about Malabar Reserve",
+    "Indian spice company",
+    "Kerala spice exporter story",
+    "spice export company India",
+    "Malabar spice heritage",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "About Us | Malabar Reserve",
     description:
       "Our story of bringing Kerala's finest spices to the world with integrity, quality, and passion.",
     url: "https://malabarreserve.co/about",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Malabar Reserve",
+    description:
+      "Our story of bringing Kerala's finest spices to the world with integrity, quality, and passion.",
   },
 };
 

@@ -8,11 +8,29 @@ export const metadata: Metadata = {
   title: "Cinnamon Export",
   description:
     "Premium Cinnamon from Kerala for export. Naturally sweet aroma, warm flavour — available as sticks, bark, and powder with custom packaging.",
+  keywords: [
+    "cinnamon export India",
+    "cinnamon sticks wholesale",
+    "cinnamon bark supplier",
+    "cinnamon powder export",
+    "Kerala cinnamon exporter",
+    "bulk cinnamon supply",
+    "cinnamon private label",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Cinnamon Export | Malabar Reserve",
     description:
       "Export-quality Cinnamon from Kerala. Available in sticks, bark, and powder with custom packaging options.",
     url: "https://malabarreserve.co/products/cinnamon",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cinnamon Export | Malabar Reserve",
+    description:
+      "Export-quality Cinnamon from Kerala. Available in sticks, bark, and powder with custom packaging options.",
   },
 };
 

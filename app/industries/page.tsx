@@ -16,11 +16,29 @@ export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
     "Malabar Reserve supplies premium spices to food manufacturers, importers, wholesale distributors, retail brands, hospitality businesses, and private label companies worldwide.",
+  keywords: [
+    "spice supplier food manufacturers",
+    "spice importer India",
+    "wholesale spice distributor",
+    "retail spice brands India",
+    "hospitality spice supplier",
+    "private label spice company",
+    "bulk spice export India",
+  ],
   openGraph: {
+    type: "website",
+    siteName: "Malabar Reserve",
     title: "Industries We Serve | Malabar Reserve",
     description:
       "From food manufacturers to private label brands — Malabar Reserve is the trusted spice export partner across industries.",
     url: "https://malabarreserve.co/industries",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industries We Serve | Malabar Reserve",
+    description:
+      "From food manufacturers to private label brands — Malabar Reserve is the trusted spice export partner across industries.",
   },
 };
 
