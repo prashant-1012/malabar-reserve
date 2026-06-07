@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Award, Package, Leaf, Globe, Box } from "lucide-react";
 
@@ -13,14 +12,14 @@ const features = [
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-[92vh] flex items-center overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/photos-to-use/hero-section.png"
-        alt="Premium Indian spices — black pepper, cardamom, and cinnamon"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover object-top"
+        src="/photos-to-use/hero-video2.mp4"
       />
 
       {/* Gradient overlay — left-to-right desktop, top-to-bottom mobile */}
