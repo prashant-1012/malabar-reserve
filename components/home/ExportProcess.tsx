@@ -23,8 +23,8 @@ const steps = [
     description:
       "Each batch undergoes careful grading and quality checks for aroma, moisture, appearance, and consistency.",
     image:
-      "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=800&q=80",
-    alt: "Quality inspection and grading of spices",
+      "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=800&q=80",
+    alt: "Quality selection and grading of premium spices",
   },
   {
     number: "03",
