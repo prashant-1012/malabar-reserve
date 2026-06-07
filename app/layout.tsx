@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "spice import India",
     "FSSAI certified spices",
   ],
-  authors: [{ name: "Malabar Reserve", url: "https://malabarreserve.co" }],
+  authors: [{ name: "Malabar Reserve", url: "https://malabar-reserve.vercel.app" }],
   category: "Food & Beverage Export",
   openGraph: {
     type: "website",
@@ -46,16 +46,27 @@ export const metadata: Metadata = {
     title: "Malabar Reserve | Premium Indian Spice Exporters",
     description:
       "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
-    url: "https://malabarreserve.co",
+    url: "https://malabar-reserve.vercel.app",
     locale: "en_US",
+    images: [
+      {
+        url: "/photos-to-use/ogImage.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Malabar Reserve – Premium Indian Spice Exporters",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Malabar Reserve | Premium Indian Spice Exporters",
     description:
       "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
+    images: ["/photos-to-use/ogImage.jpeg"],
   },
-  metadataBase: new URL("https://malabarreserve.co"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://malabar-reserve.vercel.app"
+  ),
   robots: {
     index: true,
     follow: true,

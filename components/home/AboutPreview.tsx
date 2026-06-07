@@ -12,12 +12,13 @@ const features = [
 
 export default function AboutPreview() {
   return (
-    <section className="bg-cream section-padding">
+    // 3.1 — gold border-b separates this cream section from the white Products section below
+    <section className="bg-cream section-padding border-b border-gold/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-          {/* Image — top on mobile, right on desktop */}
-          <div className="relative h-72 sm:h-96 lg:h-[520px] rounded-xl overflow-hidden shadow-xl order-first lg:order-last">
+          {/* 3.6 — sharp corners, gold border accent replaces rounded-xl */}
+          <div className="relative h-72 sm:h-96 lg:h-[520px] overflow-hidden order-first lg:order-last border border-gold/25 shadow-xl">
             <Image
               src="/photos-to-use/about-us.png"
               alt="Traditional Kerala houseboat on backwaters — the spirit of Malabar Reserve"
@@ -25,8 +26,6 @@ export default function AboutPreview() {
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            {/* Subtle gold border accent */}
-            <div className="absolute inset-0 ring-1 ring-gold/20 rounded-xl pointer-events-none" />
           </div>
 
           {/* Text content */}
@@ -39,38 +38,30 @@ export default function AboutPreview() {
               ornament
             />
 
-            <div className="flex flex-col gap-4 font-inter text-sm sm:text-base text-brown/70 leading-relaxed">
-              <p>
-                Malabar Reserve is a spice export company dedicated to supplying high-quality Indian
-                spices to importers, wholesalers, food manufacturers, and retail brands across
-                international markets.
-              </p>
-              <p>
-                Inspired by the historic spice routes of the Malabar region, we focus on delivering
-                products that reflect purity, authenticity, and consistency.
-              </p>
-              <p>
-                With a strong network of sourcing partners and a commitment to dependable trade
-                practices, Malabar Reserve aims to build long-term relationships based on trust,
-                transparency, and quality.
-              </p>
-            </div>
+            {/* 3.2 + 3.3 — larger text, collapsed to one strong paragraph */}
+            <p className="font-inter text-base sm:text-lg text-brown/70 leading-relaxed">
+              Malabar Reserve sources and exports India&apos;s finest spices — black pepper,
+              cardamom, and cinnamon — to importers, wholesalers, and food brands worldwide.
+              Rooted in the heritage of the Malabar spice routes, every shipment reflects our
+              commitment to purity, authenticity, and dependable trade.
+            </p>
 
-            {/* 4 feature icons */}
+            {/* 3.4 — gold hairline border circles instead of bg-forest/10 fill */}
             <div className="grid grid-cols-2 gap-4 mt-2">
               {features.map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-forest/10 flex items-center justify-center flex-shrink-0">
-                    <Icon size={16} className="text-forest" />
+                  <div className="w-9 h-9 rounded-full border border-gold/60 bg-transparent flex items-center justify-center flex-shrink-0">
+                    <Icon size={16} className="text-gold" />
                   </div>
                   <span className="font-inter text-sm font-medium text-brown">{label}</span>
                 </div>
               ))}
             </div>
 
+            {/* 3.5 — underline treatment on the text CTA */}
             <Link
               href="/about"
-              className="flex items-center gap-2 font-inter text-sm font-semibold text-forest hover:text-gold transition-colors duration-200 group mt-1 w-fit"
+              className="inline-flex items-center gap-2 font-inter text-sm font-semibold text-forest hover:text-gold transition-colors duration-200 group mt-1 w-fit border-b border-forest hover:border-gold pb-0.5"
             >
               Learn Our Story
               <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
