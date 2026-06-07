@@ -69,7 +69,7 @@ export default function ExportProcess() {
             </svg>
           </div>
           <p className="font-inter text-xs font-semibold uppercase tracking-[0.2em] text-brown/50">
-            From Origin to Global Markets
+            From Origin to Global Markets 
           </p>
         </div>
 
