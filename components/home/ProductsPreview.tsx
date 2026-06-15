@@ -10,7 +10,7 @@ const products = [
     alt: "Premium Kerala black pepper in a wooden bowl",
     tag: "King of Spices",
     description:
-      "Sourced from premium growing regions in South India with bold flavour and export-grade quality.",
+      "High-Piperine black pepper from Kerala, prized for its bold flavor, rich aroma, and export-quality consistency.",
   },
   {
     name: "Green Cardamom",
@@ -19,16 +19,16 @@ const products = [
     alt: "Fresh green cardamom pods handpicked from Idukki, Kerala",
     tag: "Idukki Highlands",
     description:
-      "Handpicked for vibrant colour, intense aroma, and superior freshness — ideal for gourmet and food processing applications.",
+      "Super Bold green cardamom with vibrant color, intense aroma, and superior freshness.",
   },
   {
-    name: "Cinnamon",
-    slug: "cinnamon",
-    image: "/photos-to-use/cinnamon.png",
-    alt: "Premium cinnamon sticks and powder",
-    tag: "Naturally Sweet",
+    name: "Turmeric",
+    slug: "turmeric",
+    image: "/photos-to-use/turmeric_roots.webp",
+    alt: "High-curcumin turmeric roots sourced from South India",
+    tag: "High Curcumin",
     description:
-      "Carefully selected for warm flavour profiles suited to global food and beverage markets.",
+      "High-Curcumin turmeric sourced from South India, valued for its purity, natural color, and exceptional quality.",
   },
 ];
 

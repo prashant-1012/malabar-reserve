@@ -32,7 +32,7 @@ export default function AboutPreview() {
           <div className="flex flex-col gap-6 order-last lg:order-first">
             <SectionHeading
               eyebrow="About Us"
-              title="The Essence of Indian Spice Excellence"
+              title="The Heritage of India's Authentic GI-Tagged Spices"
               align="left"
               theme="dark"
               ornament
@@ -40,10 +40,11 @@ export default function AboutPreview() {
 
             {/* 3.2 + 3.3 — larger text, collapsed to one strong paragraph */}
             <p className="font-inter text-base sm:text-lg text-brown/70 leading-relaxed">
-              Malabar Reserve sources and exports India&apos;s finest spices — black pepper,
-              cardamom, and cinnamon — to importers, wholesalers, and food brands worldwide.
-              Rooted in the heritage of the Malabar spice routes, every shipment reflects our
-              commitment to purity, authenticity, and dependable trade.
+              Malabar Reserve sources and exports India&apos;s distinguished GI-tagged spices,
+              including Malabar Black Pepper, Alleppey Green Cardamom, and other origin-certified
+              treasures, to importers, wholesalers, and food brands worldwide. The historic Malabar
+              spice route embodies authenticity, traceability, exceptional quality, and a commitment
+              to preserving the heritage behind each spice.
             </p>
 
             {/* 3.4 — gold hairline border circles instead of bg-forest/10 fill */}

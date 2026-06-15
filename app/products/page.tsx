@@ -6,10 +6,7 @@ import {
   FlaskConical,
   Package,
   Globe,
-  Handshake,
-  Star,
   Wind,
-  Flame,
 } from "lucide-react";
 import ProductSection from "@/components/products/ProductSection";
 import PackagingSolutions from "@/components/products/PackagingSolutions";
@@ -17,12 +14,12 @@ import PackagingSolutions from "@/components/products/PackagingSolutions";
 export const metadata: Metadata = {
   title: "Our Products",
   description:
-    "Explore Malabar Reserve's premium export spices: Black Pepper, Green Cardamom, and Cinnamon — sourced from Kerala's finest farms.",
+    "Explore Malabar Reserve's premium export spices: Black Pepper, Green Cardamom, and Turmeric — sourced from India's finest farms.",
   keywords: [
     "Indian spices for export",
     "black pepper wholesale",
     "green cardamom bulk supply",
-    "cinnamon export",
+    "turmeric export",
     "Kerala spice catalogue",
     "spice packaging solutions",
     "private label spices India",
@@ -32,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Malabar Reserve",
     title: "Our Products | Malabar Reserve",
     description:
-      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Cinnamon in bulk and custom packaging.",
+      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Turmeric in bulk and custom packaging.",
     url: "https://malabarreserve.co/products",
     locale: "en_US",
   },
@@ -40,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Products | Malabar Reserve",
     description:
-      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Cinnamon in bulk and custom packaging.",
+      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Turmeric in bulk and custom packaging.",
   },
 };
 
@@ -70,8 +67,8 @@ export default function ProductsPage() {
             Our Products
           </h1>
           <p className="font-inter text-base text-white/65 max-w-xl leading-relaxed">
-            Three of India&apos;s finest spices, sourced directly from Kerala&apos;s heartland and
-            prepared to the highest export standards.
+            Three of India&apos;s finest spices, sourced directly from India&apos;s premier growing
+            regions and prepared to the highest export standards.
           </p>
         </div>
       </section>
@@ -126,28 +123,28 @@ export default function ProductsPage() {
         ]}
       />
 
-      {/* ── 3. Cinnamon ──────────────────────────────────────── */}
+      {/* ── 3. Turmeric ──────────────────────────────────────── */}
       <ProductSection
         eyebrow="Product 03"
-        title="Cinnamon"
-        description="Carefully selected cinnamon with naturally sweet aroma and warm flavour profiles suited for global food and beverage markets."
+        title="Turmeric"
+        description="High-Curcumin turmeric sourced from South India's finest farms — valued for its vibrant natural colour, exceptional purity, and consistent quality for food, nutraceutical, and industrial applications."
         bullets={[
-          "Cinnamon Sticks",
-          "Cinnamon Bark",
-          "Powdered Cinnamon",
+          "Whole Turmeric Fingers",
+          "High-Curcumin Turmeric Powder",
+          "Steam Sterilized Turmeric",
           "Customized Packaging Solutions",
         ]}
-        imageSrc="/photos-to-use/cinnamon.png"
-        imageAlt="Premium cinnamon sticks bundled and cinnamon powder in a bowl"
+        imageSrc="/photos-to-use/turmeric_roots.webp"
+        imageAlt="High-curcumin turmeric roots sourced from South India"
         imagePosition="right"
-        href="/products/cinnamon"
+        href="/products/turmeric"
         bgColor="white"
         featureIcons={[
-          { icon: Flame, label: "Naturally Sweet Aroma" },
-          { icon: Star, label: "Carefully Selected & Processed" },
-          { icon: Award, label: "Consistent Quality You Can Trust" },
-          { icon: Package, label: "Custom Packaging Solutions" },
-          { icon: Handshake, label: "Ideal for Global Markets" },
+          { icon: Sprout, label: "Sourced from South India's Finest Farms" },
+          { icon: Award, label: "High-Curcumin Export Grade" },
+          { icon: FlaskConical, label: "Hygienic Processing & Quality Checked" },
+          { icon: Package, label: "Customized Packaging Solutions" },
+          { icon: Globe, label: "Trusted by Customers Worldwide" },
         ]}
       />
 

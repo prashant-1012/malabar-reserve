@@ -7,7 +7,7 @@ import { Send } from "lucide-react";
 const products = [
   "Black Pepper",
   "Green Cardamom",
-  "Cinnamon",
+  "Turmeric",
   "All Products",
 ];
 

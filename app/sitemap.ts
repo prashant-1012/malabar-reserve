@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: `${BASE_URL}/products/cinnamon`,
+      url: `${BASE_URL}/products/turmeric`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.85,

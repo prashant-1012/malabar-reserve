@@ -129,7 +129,7 @@ export default function AboutPage() {
             <div className="lg:sticky lg:top-24">
               <SectionHeading
                 eyebrow="About Us"
-                title="The Essence of Indian Spice Excellence"
+                title="The Heritage of India's Authentic GI-Tagged Spices"
                 align="left"
                 theme="dark"
                 ornament
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 to ensure traceability from field to shipment.
               </p>
               <p>
-                Our portfolio — Black Pepper, Green Cardamom, and Cinnamon — represents the finest
+                Our portfolio — Black Pepper, Green Cardamom, and Turmeric — represents the finest
                 that the Malabar spice belt has to offer. Each product is carefully selected,
                 processed in hygienic facilities, and packed to international standards so it
                 arrives in perfect condition, wherever in the world you are.

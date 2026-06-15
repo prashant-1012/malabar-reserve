@@ -9,7 +9,7 @@ import Logo from "@/components/ui/Logo";
 const products = [
   { label: "Black Pepper", href: "/products/black-pepper" },
   { label: "Green Cardamom", href: "/products/green-cardamom" },
-  { label: "Cinnamon", href: "/products/cinnamon" },
+  { label: "Turmeric", href: "/products/turmeric" },
 ];
 
 const navLinks = [

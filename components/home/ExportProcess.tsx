@@ -9,9 +9,9 @@ const steps = [
   {
     number: "01",
     icon: Leaf,
-    title: "Careful Sourcing",
+    title: "Origin Selection",
     description:
-      "We partner with reliable farms and suppliers in India's leading spice-growing regions.",
+      "We partner with select growers across Kerala's renowned spice-producing regions to source only the finest quality harvests.",
     image:
       "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80",
     alt: "Spice farmer harvesting black pepper in Kerala",
@@ -19,9 +19,9 @@ const steps = [
   {
     number: "02",
     icon: Search,
-    title: "Quality Selection",
+    title: "Precision Quality Assurance",
     description:
-      "Each batch undergoes careful grading and quality checks for aroma, moisture, appearance, and consistency.",
+      "Each lot is meticulously graded and evaluated to ensure superior size, purity, aroma, and consistency before export.",
     image:
       "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=800&q=80",
     alt: "Quality selection and grading of premium spices",
@@ -29,9 +29,9 @@ const steps = [
   {
     number: "03",
     icon: Package,
-    title: "Processing & Packaging",
+    title: "Export-Ready Processing",
     description:
-      "Products are processed and packed using hygienic methods to preserve freshness and meet buyer requirements.",
+      "Using stringent quality protocols, our spices are processed and packed to preserve freshness and meet global food safety standards.",
     image:
       "https://images.unsplash.com/photo-1565118531796-763e5082d113?w=800&q=80",
     alt: "Hygienic spice processing and packaging facility",
@@ -39,9 +39,9 @@ const steps = [
   {
     number: "04",
     icon: Globe,
-    title: "Global Shipping",
+    title: "Worldwide Distribution",
     description:
-      "We coordinate efficient export logistics and documentation to ensure timely international delivery.",
+      "Backed by efficient logistics and export expertise, we deliver authentic Indian spices to international markets with reliability and precision.",
     image:
       "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80",
     alt: "Shipping containers at international port for global export",

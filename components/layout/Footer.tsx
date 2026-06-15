@@ -13,7 +13,7 @@ const navLinks = [
 const productLinks = [
   { label: "Black Pepper", href: "/products/black-pepper" },
   { label: "Green Cardamom", href: "/products/green-cardamom" },
-  { label: "Cinnamon", href: "/products/cinnamon" },
+  { label: "Turmeric", href: "/products/turmeric" },
 ];
 
 export default function Footer() {

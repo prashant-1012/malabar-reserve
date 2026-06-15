@@ -25,12 +25,12 @@ export const metadata: Metadata = {
     template: "%s | Malabar Reserve",
   },
   description:
-    "Malabar Reserve is a premium Indian spice export company specializing in Black Pepper, Green Cardamom, and Cinnamon sourced directly from Kerala's finest spice gardens.",
+    "Malabar Reserve is a premium Indian spice export company specializing in Black Pepper, Green Cardamom, and Turmeric sourced directly from India's finest spice gardens.",
   keywords: [
     "Indian spice exporter",
     "black pepper export",
     "green cardamom export",
-    "cinnamon export",
+    "turmeric export",
     "Kerala spices",
     "wholesale spice supplier",
     "Malabar Reserve",

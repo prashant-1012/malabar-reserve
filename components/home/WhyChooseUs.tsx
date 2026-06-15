@@ -1,31 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { Award, Handshake, Globe, Box, Leaf, Mail, ExternalLink, Check, type LucideIcon } from "lucide-react";
+import { Award, Handshake, Globe, Box, Check, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const features: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: Award,
-    title: "Premium Quality",
-    description: "Carefully sourced and selected for export-grade quality, every single shipment.",
+    title: "Premium Export Quality",
+    description:
+      "We source and supply carefully selected black pepper, green cardamom, and turmeric that meet international quality standards for purity, aroma, consistency, and performance.",
   },
   {
     icon: Handshake,
-    title: "Reliable Partnership",
-    description: "Built on trust, transparency, and long-term trade relationships.",
+    title: "Trusted Partnerships",
+    description:
+      "We believe in building lasting relationships through transparency, dependable service, and a commitment to delivering value with every shipment.",
   },
   {
     icon: Globe,
-    title: "Global Reach",
-    description: "Efficient export network ensuring timely, documented delivery worldwide.",
+    title: "Global Export Expertise",
+    description:
+      "From documentation and compliance to logistics and delivery, our export-focused approach ensures a seamless experience for customers worldwide.",
   },
   {
     icon: Box,
-    title: "Flexible Solutions",
-    description: "Custom packaging, private labelling, and bulk supply options to suit your business.",
+    title: "Customized Supply Solutions",
+    description:
+      "Whether you require bulk shipments, private labelling, or customized packaging, we provide flexible solutions tailored to your business needs.",
   },
 ];
 
@@ -44,7 +47,7 @@ export default function WhyChooseUs() {
               <SectionHeading
                 eyebrow="Why Partner With Us"
                 title="Why Partner With Malabar Reserve?"
-                subtitle="We go beyond spices — we build lasting partnerships through trust, quality, and commitment."
+                subtitle="Delivering premium Indian spices through quality, reliability, and long-term partnerships."
                 align="left"
                 theme="dark"
               />
@@ -92,7 +95,7 @@ export default function WhyChooseUs() {
             <div className="relative w-full overflow-hidden border border-gold/25 shadow-xl group" style={{ aspectRatio: "4/3" }}>
               <Image
                 src="/photos-to-use/why-partner-us.png"
-                alt="Premium spice bowls — black pepper, green cardamom, and cinnamon — flat lay"
+                alt="Premium spice bowls — black pepper, green cardamom, and turmeric — flat lay"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -104,50 +107,6 @@ export default function WhyChooseUs() {
         </div>
       </div>
 
-      {/* 6.5 — CTA bar separated with a top border for breathing room */}
-      <div className="bg-forest border-t-4 border-gold/30 py-7 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-
-          {/* Left: tagline */}
-          <div className="flex items-center gap-3">
-            <Leaf size={20} className="text-gold flex-shrink-0" />
-            <div>
-              <p className="font-playfair font-bold text-white text-lg leading-tight">
-                Let&apos;s Grow Together
-              </p>
-              <p className="font-inter text-xs text-white/60 tracking-wide">
-                Quality spices. Stronger partnerships.
-              </p>
-            </div>
-          </div>
-
-          {/* Right: contact info + CTA */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <a
-              href="mailto:info@malabarreserve.co"
-              className="flex items-center gap-2 font-inter text-xs text-white/70 hover:text-white transition-colors duration-200"
-            >
-              <Mail size={13} className="text-gold" />
-              info@malabarreserve.co
-            </a>
-            <a
-              href="https://malabarreserve.co"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-inter text-xs text-white/70 hover:text-white transition-colors duration-200"
-            >
-              <ExternalLink size={13} className="text-gold" />
-              malabarreserve.co
-            </a>
-            <Link
-              href="/contact"
-              className="font-inter text-xs font-semibold tracking-[0.08em] px-5 py-2 rounded-none border border-gold text-gold hover:bg-gold hover:text-brown transition-colors duration-200 whitespace-nowrap"
-            >
-              Request a Quote
-            </Link>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

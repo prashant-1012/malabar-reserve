@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { Factory, Ship, Warehouse, ShoppingBag, ChefHat, Tag, ArrowRight } from "lucide-react";
+import { Factory, Ship, Warehouse, ShoppingBag, ChefHat, Tag } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const industries = [
@@ -63,7 +62,7 @@ export default function IndustriesPreview() {
           <SectionHeading
             eyebrow="Industries We Serve"
             title="Who We Work With"
-            subtitle="Delivering premium spices and reliable supply solutions to businesses across the globe."
+            subtitle="Curating exceptional spices and dependable supply partnerships for businesses worldwide."
             align="center"
           />
         </div>
@@ -139,16 +138,6 @@ export default function IndustriesPreview() {
           })}
         </div>
 
-        {/* 7.4 + 7.5 — remove italic tagline, outlined CTA button */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/industries"
-            className="inline-flex items-center gap-2 font-inter text-sm font-semibold tracking-[0.12em] uppercase px-10 py-3.5 rounded-none border border-forest text-forest hover:bg-forest hover:text-white transition-colors duration-300 group"
-          >
-            View All Industries
-            <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
-          </Link>
-        </div>
       </div>
     </section>
   );

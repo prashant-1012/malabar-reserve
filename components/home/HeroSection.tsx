@@ -4,7 +4,7 @@ import { Award, Package, Leaf, Globe, Box, ChevronDown } from "lucide-react";
 const features = [
   { icon: Leaf, label: "Premium Black Pepper" },
   { icon: Award, label: "Green Cardamom" },
-  { icon: Package, label: "Natural Cinnamon" },
+  { icon: Package, label: "High Curcumin Turmeric" },
   { icon: Box, label: "Bulk & Private Label Supply" },
   { icon: Globe, label: "Global Export Standards" },
 ];
@@ -46,7 +46,7 @@ export default function HeroSection() {
           {/* Subtitle */}
           <p className="font-inter text-base sm:text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
             We bring the richness of India&apos;s spice heritage to global markets through carefully
-            sourced, export-grade black pepper, cardamom, and cinnamon.
+            sourced, export-grade black pepper, cardamom, and turmeric.
           </p>
 
           {/* 2.4 — Larger CTAs, rounded-none to match navbar */}
