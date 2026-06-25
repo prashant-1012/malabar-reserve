@@ -28,10 +28,15 @@ No database, no auth, no CMS. Pure static/server rendering.
 ## Design System
 
 **Brand Colors (Tailwind custom tokens):**
-- `forest` → `#2D4A1E` — primary, navbars, footers, CTAs, feature bars
-- `gold` → `#C9A84C` — accents, icons, borders, eyebrow text, CTA buttons
+- `forest` → `#17241A` — primary, navbars, footers, CTAs, feature bars
+- `gold` → `#9C7830` — accents, icons, borders, eyebrow text, CTA buttons
+- `gold-dark` → `#7D6026` — hover state for gold buttons/CTAs
 - `cream` → `#F5F0E8` — section backgrounds, hover states, light areas
 - `brown` → `#3D2B1F` — body text, headings on light backgrounds
+
+Colors were retuned (2026-06-25) to match the real brand logo — see
+[color-and-logo-update.md](color-and-logo-update.md) for the full rationale and exact
+pixel-sampled source colors.
 
 **Typography:**
 - Headings: `font-playfair` (CSS var `--font-playfair`) — all `h1`–`h6` globally via `globals.css`
@@ -86,12 +91,14 @@ components/
   contact/
     ContactForm.tsx         Client component ("use client"). Fields: name, company, country, product (dropdown), quantity, message. Currently uses simulated delay + toast — no real backend submission.
   ui/
-    Logo.tsx                SVG leaf icon, variant prop: "light" | "dark"
+    Logo.tsx                variant prop: "dark" (real logo image, light backgrounds) | "light" (coded white/gold text wordmark, dark backgrounds)
     SectionHeading.tsx      eyebrow + title + ornament divider + subtitle. Props: align (center|left), theme (dark|light), ornament (bool)
 
 public/
-  photos-to-use/            Local brand images — hero-video2.mp4, about-us.png, black-pepper.png, cinnamon.png, green-cardmom.png, hero-section.png, why-partner-us.png, ogImage.jpeg
-  favicon.svg
+  photos-to-use/            Local brand images — hero-video2.mp4, about-us.png, black-pepper.png, cinnamon.png, green-cardmom.png, hero-section.png, why-partner-us.png, ogImage.jpeg, logo-wide.png (navbar), logo-icon.png (favicon source), logo-square.png (unused, kept for future use)
+  favicon-32.png            32x32 favicon, generated from logo-icon.png
+  favicon-192.png           192x192 favicon / apple-touch-icon, generated from logo-icon.png
+  favicon.svg                old favicon, unreferenced — kept on disk but unused
 ```
 
 ---

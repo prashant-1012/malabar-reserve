@@ -59,13 +59,13 @@ export default function ExportProcess() {
         <div className="mb-14 text-center">
           <div className="flex items-center justify-center gap-6 mb-2">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" className="hidden sm:block flex-shrink-0">
-              <path d="M14 2C14 2 6 8 6 16C6 20.4 9.6 24 14 24C18.4 24 22 20.4 22 16C22 8 14 2 14 2Z" fill="#2D4A1E" opacity="0.3" />
-              <path d="M14 2C14 2 6 8 6 16C6 20.4 9.6 24 14 24" stroke="#C9A84C" strokeWidth="1" fill="none" />
+              <path d="M14 2C14 2 6 8 6 16C6 20.4 9.6 24 14 24C18.4 24 22 20.4 22 16C22 8 14 2 14 2Z" fill="#17241A" opacity="0.3" />
+              <path d="M14 2C14 2 6 8 6 16C6 20.4 9.6 24 14 24" stroke="#9C7830" strokeWidth="1" fill="none" />
             </svg>
             <SectionHeading eyebrow="How We Work" title="Our Export Process" align="center" />
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" className="hidden sm:block flex-shrink-0">
-              <path d="M14 2C14 2 22 8 22 16C22 20.4 18.4 24 14 24C9.6 24 6 20.4 6 16C6 8 14 2 14 2Z" fill="#2D4A1E" opacity="0.3" />
-              <path d="M14 2C14 2 22 8 22 16C22 20.4 18.4 24 14 24" stroke="#C9A84C" strokeWidth="1" fill="none" />
+              <path d="M14 2C14 2 22 8 22 16C22 20.4 18.4 24 14 24C9.6 24 6 20.4 6 16C6 8 14 2 14 2Z" fill="#17241A" opacity="0.3" />
+              <path d="M14 2C14 2 22 8 22 16C22 20.4 18.4 24 14 24" stroke="#9C7830" strokeWidth="1" fill="none" />
             </svg>
           </div>
           <p className="font-inter text-xs font-semibold uppercase tracking-[0.2em] text-brown/50">

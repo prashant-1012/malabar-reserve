@@ -53,7 +53,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
             <Link
               href="/contact"
-              className="font-inter font-semibold text-base px-9 py-4 rounded-none bg-gold text-brown hover:bg-yellow-500 transition-colors duration-200 text-center tracking-[0.06em]"
+              className="font-inter font-semibold text-base px-9 py-4 rounded-none bg-gold text-brown hover:bg-gold-dark transition-colors duration-200 text-center tracking-[0.06em]"
             >
               Request a Quote
             </Link>

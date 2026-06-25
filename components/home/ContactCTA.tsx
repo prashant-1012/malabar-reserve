@@ -6,14 +6,14 @@ export default function ContactCTA() {
     // 8.1 — slightly darker bg to distinguish from the forest green CTA bar above in WhyChooseUs
     <section
       className="relative section-padding overflow-hidden"
-      style={{ backgroundColor: "#1e3314" }}
+      style={{ backgroundColor: "#121D15" }}
     >
       {/* 8.5 — subtle diagonal texture for depth */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 12px)",
+            "repeating-linear-gradient(45deg, #9C7830 0px, #9C7830 1px, transparent 1px, transparent 12px)",
         }}
       />
 
@@ -46,7 +46,7 @@ export default function ContactCTA() {
           {/* 8.4 — shorter button label, rounded-none, consistent with site buttons */}
           <Link
             href="/contact"
-            className="font-inter font-semibold text-sm tracking-[0.1em] px-10 py-4 rounded-none bg-gold text-brown hover:bg-yellow-500 transition-colors duration-300 mt-2"
+            className="font-inter font-semibold text-sm tracking-[0.1em] px-10 py-4 rounded-none bg-gold text-brown hover:bg-gold-dark transition-colors duration-300 mt-2"
           >
             Send an Inquiry
           </Link>

@@ -149,8 +149,8 @@ export default function Navbar() {
               href="/contact"
               className={`font-inter text-sm font-semibold tracking-[0.08em] px-6 py-2.5 rounded-none transition-colors duration-300 ${
                 isTransparent
-                  ? "bg-gold text-brown hover:bg-yellow-500"
-                  : "bg-gold text-brown hover:bg-yellow-600"
+                  ? "bg-gold text-brown hover:bg-gold-dark"
+                  : "bg-gold text-brown hover:bg-gold-dark"
               }`}
             >
               Request a Quote
@@ -225,7 +225,7 @@ export default function Navbar() {
           <div className="mt-3 pt-3 border-t border-cream">
             <Link
               href="/contact"
-              className="block w-full text-center font-inter text-sm font-semibold tracking-[0.08em] px-5 py-3 rounded-none bg-gold text-brown hover:bg-yellow-600 transition-colors"
+              className="block w-full text-center font-inter text-sm font-semibold tracking-[0.08em] px-5 py-3 rounded-none bg-gold text-brown hover:bg-gold-dark transition-colors"
             >
               Request a Quote
             </Link>
