@@ -35,21 +35,23 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  "Alleppey Green Cardamom",
-  "Different Size Grades (6mm, 7mm, 8mm+)",
-  "Premium Export Quality",
-  "Bulk & Retail Packing",
+  "GI-Tagged Alleppey Green Cardamom",
+  "Premium Export Grades",
+  "Size-Graded Cardamom Pods",
+  "Bulk Supply for Global Markets",
+  "Private Label & Custom Packaging",
 ];
 
+const specGrades = ["SUPER BOLD", "AGEB", "EXTRA BOLD"];
+
 const specs = [
-  { label: "Origin", value: "Idukki & Wayanad, Kerala" },
-  { label: "Moisture Content", value: "Max 10%" },
-  { label: "Purity", value: "Min 98%" },
-  { label: "Shelf Life", value: "18 months" },
-  { label: "Minimum Order Quantity", value: "250 kg" },
-  { label: "Packaging Options", value: "1 kg / 5 kg / 25 kg bags, Retail pouches, Vacuum packs, Custom" },
-  { label: "Certifications", value: "FSSAI, ISO 22000" },
-  { label: "Available Forms", value: "Whole pods, Decorticated seeds, Powder" },
+  { label: "Quality Level", values: ["Ultra Premium", "Premium Export", "Premium Plus"] },
+  { label: "Capsule", values: ["8.5 mm+", "8 mm+", "8 mm+"] },
+  { label: "Volatile Oil", values: ["6-8%", "6-8%", "5-7%"] },
+  { label: "Color", values: ["Bright Green", "Natural Green", "Green"] },
+  { label: "Moisture", values: ["Max 12%", "Max 12%", "Max 12%"] },
+  { label: "Purity", values: ["99% min", "99% min", "99% min"] },
+  { label: "Ideal For", values: ["Gourmet & Luxury Retail", "Middle East & Premium Export", "Retail & Food Processing"] },
 ];
 
 const features = [
@@ -79,25 +81,22 @@ export default function GreenCardamomPage() {
             <div className="flex flex-col gap-5">
               <SectionHeading
                 eyebrow="Product Overview"
-                title="About Our Green Cardamom"
+                title="About Our GI-Tagged Alleppey Green Cardamom"
                 align="left"
               />
               <div className="flex flex-col gap-4 font-inter text-sm text-brown/70 leading-relaxed">
                 <p>
-                  Our Green Cardamom is handpicked from the misty highlands of Idukki and Wayanad
-                  in Kerala — regions that produce some of the world&apos;s finest cardamom. Each
-                  pod is selected for its vibrant green colour, plumpness, and the intensity of its
-                  aromatic oils.
+                  Often referred to as the &ldquo;Queen of Spices,&rdquo; GI-Tagged Alleppey Green
+                  Cardamom is treasured for its vibrant green pods, intense aroma, and naturally
+                  sweet, complex flavour. Grown in the mist-covered hills of Kerala&apos;s Western
+                  Ghats.
                 </p>
                 <p>
-                  Ideal for food processing, retail packaging, beverages, confectionery, and gourmet
-                  culinary applications. Our cardamom is processed with care to preserve essential
-                  oils that give it its signature rich aroma and bold flavour.
-                </p>
-                <p>
-                  We supply Alleppey Green Cardamom in multiple size grades to suit your specific
-                  application — whether that&apos;s premium retail shelving, industrial spice blending,
-                  or private label product development.
+                  At Malabar Reserve, we source carefully selected cardamom from trusted growing
+                  regions and process it with precision to preserve its colour, freshness, and
+                  essential oils. Available in multiple grades and sizes, our cardamom is ideal
+                  for retail, food processing, beverage, confectionery, and private-label
+                  applications, delivering exceptional quality and consistency in every shipment.
                 </p>
               </div>
             </div>
@@ -137,12 +136,17 @@ export default function GreenCardamomPage() {
             <table className="w-full text-sm font-inter">
               <thead>
                 <tr className="bg-forest">
-                  <th className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider w-1/3">
-                    Parameter
-                  </th>
                   <th className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider">
                     Specification
                   </th>
+                  {specGrades.map((grade) => (
+                    <th
+                      key={grade}
+                      className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider"
+                    >
+                      {grade}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -152,7 +156,9 @@ export default function GreenCardamomPage() {
                     className={`border-t border-gold/10 ${i % 2 === 0 ? "bg-white" : "bg-cream/60"}`}
                   >
                     <td className="px-6 py-4 text-brown font-medium">{spec.label}</td>
-                    <td className="px-6 py-4 text-brown/70">{spec.value}</td>
+                    {spec.values.map((value, j) => (
+                      <td key={j} className="px-6 py-4 text-brown/70">{value}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>

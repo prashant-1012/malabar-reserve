@@ -93,8 +93,7 @@ export default function AboutPage() {
             About Malabar Reserve
           </h1>
           <p className="font-inter text-base text-white/65 max-w-xl leading-relaxed">
-            A spice export company built on the timeless heritage of India&apos;s Malabar Coast,
-            delivering quality with integrity to global markets.
+            The Heritage of India&apos;s Authentic GI-Tagged Spices
           </p>
         </div>
       </section>
@@ -147,27 +146,33 @@ export default function AboutPage() {
             {/* Right: story paragraphs */}
             <div className="flex flex-col gap-6 font-inter text-base text-brown/70 leading-relaxed">
               <p>
-                Malabar Reserve is a spice export company dedicated to supplying high-quality Indian
-                spices to importers, wholesalers, food manufacturers, and retail brands across
-                international markets.
+                Malabar Reserve brings the heritage of India&apos;s finest spices to global markets.
+                Inspired by the historic spice routes of the Malabar Coast, we specialize in
+                sourcing and exporting premium spices with a commitment to authenticity, quality,
+                and dependable trade.
               </p>
               <p>
-                Inspired by the historic spice routes of the Malabar region, we focus on delivering
-                products that reflect purity, authenticity, and consistency. The Malabar Coast has
-                been the world&apos;s spice capital for centuries — and we carry that legacy forward
-                with every shipment we send.
+                Inspired by the historic spice routes of the Malabar Coast, our business is rooted
+                in a legacy that has connected India to the world for centuries. Today, we carry
+                that tradition forward by delivering carefully sourced spices that reflect the
+                distinctive character, quality, and provenance of their origins.
               </p>
               <p>
-                With a strong network of sourcing partners and a commitment to dependable trade
-                practices, Malabar Reserve aims to build long-term relationships based on trust,
-                transparency, and quality. We work directly with farmers and growers across Kerala
-                to ensure traceability from field to shipment.
+                Through a strong network of sourcing partners and direct relationships with
+                growers across Kerala and South India, we ensure traceability from farm to
+                shipment. Our commitment to transparency, dependable supply chains, and rigorous
+                quality standards enables us to build long-term partnerships with customers around
+                the world.
               </p>
               <p>
-                Our portfolio — Black Pepper, Green Cardamom, and Turmeric — represents the finest
-                that the Malabar spice belt has to offer. Each product is carefully selected,
-                processed in hygienic facilities, and packed to international standards so it
-                arrives in perfect condition, wherever in the world you are.
+                Our portfolio includes GI-Tagged Malabar Pepper, GI-Tagged Alleppey Green
+                Cardamom, and premium turmeric. Each product is carefully selected, processed in
+                hygienic facilities, and prepared to international standards, preserving the
+                authenticity and excellence that define India&apos;s rich spice heritage.
+              </p>
+              <p>
+                At Malabar Reserve, every shipment is a reflection of our commitment to quality,
+                reliability, and the enduring legacy of the spice lands we proudly represent.
               </p>
             </div>
           </div>

@@ -37,22 +37,22 @@ export const metadata: Metadata = {
 
 const options = [
   "Whole Turmeric Fingers",
-  "Sliced Turmeric",
-  "High-Curcumin Turmeric Powder",
-  "Steam Sterilized Turmeric",
-  "Customized Packaging Solutions",
+  "Premium Turmeric Powder",
+  "Export-Grade Turmeric",
+  "Bulk Supply for Global Markets",
+  "Private Label & Custom Packaging",
 ];
 
+const specGrades = ["ALLEPPEY", "POLISHED FINGERS", "UNPOLISHED FINGERS", "TURMERIC POWDER"];
+
 const specs = [
-  { label: "Origin", value: "South India (Erode, Andhra Pradesh)" },
-  { label: "Curcumin Content", value: "Min 3% – 5% (High-Curcumin grades available)" },
-  { label: "Moisture Content", value: "Max 12%" },
-  { label: "Purity", value: "Min 99%" },
-  { label: "Shelf Life", value: "24 months" },
-  { label: "Minimum Order Quantity", value: "500 kg" },
-  { label: "Packaging Options", value: "25 kg / 50 kg sacks, Retail pouches, Vacuum packs, Custom" },
-  { label: "Certifications", value: "FSSAI, ISO 22000" },
-  { label: "Available Forms", value: "Whole Fingers, Sliced, Fine Powder" },
+  { label: "Quality Level", values: ["Ultra Premium", "Premium", "Premium", "Premium"] },
+  { label: "Curcumin", values: ["5–7%", "4–6%", "4–6%", "3–6%"] },
+  { label: "Moisture", values: ["Max 10%", "Max 10%", "Max 10%", "Max 10%"] },
+  { label: "Form", values: ["Whole Fingers", "Polished Fingers", "Natural Fingers", "Powder"] },
+  { label: "Color", values: ["Deep Orange-Yellow", "Bright Yellow", "Natural Orange-Yellow", "Yellow to Orange"] },
+  { label: "Purity", values: ["99% min", "99% min", "99% min", "99% min"] },
+  { label: "Ideal For", values: ["Premium Export & Food Processing", "Retail & Export Markets", "Natural & Organic Markets", "Food & Spice Manufacturing"] },
 ];
 
 const features = [
@@ -88,24 +88,16 @@ export default function TurmericPage() {
               />
               <div className="flex flex-col gap-4 font-inter text-sm text-brown/70 leading-relaxed">
                 <p>
-                  Our turmeric is sourced from the premier spice-growing belts of South India —
-                  particularly Erode in Tamil Nadu and select regions of Andhra Pradesh — renowned
-                  globally for producing turmeric with exceptionally high curcumin content. Rich
-                  golden colour, intense earthy aroma, and consistent quality make it a preferred
-                  choice for food manufacturers, nutraceutical brands, and spice processors worldwide.
+                  One of the most premium varieties of Indian turmeric, sourced primarily from
+                  Kerala. It is renowned for its deep orange-yellow color, high curcumin content,
+                  and excellent coloring strength.
                 </p>
                 <p>
-                  Each lot is carefully graded and evaluated for curcumin percentage, colour value,
-                  moisture, and purity before processing. Our turmeric is handled in hygienic
-                  facilities under stringent quality protocols, ensuring it meets international food
-                  safety standards — including FSSAI and ISO 22000 certifications — before every
-                  export shipment.
-                </p>
-                <p>
-                  Whether you require whole turmeric fingers for processing, steam sterilized powder
-                  for food-grade applications, or high-curcumin extract-grade material for
-                  nutraceuticals and health products, we supply it with reliable consistency and
-                  flexible packaging tailored to your exact needs.
+                  At Malabar Reserve, we carefully source and process premium turmeric to preserve
+                  its natural characteristics while ensuring compliance with international quality
+                  standards. With dependable supply, consistent quality, and tailored packaging
+                  solutions, we serve importers, wholesalers, food manufacturers, and
+                  private-label brands worldwide.
                 </p>
               </div>
             </div>
@@ -145,12 +137,17 @@ export default function TurmericPage() {
             <table className="w-full text-sm font-inter">
               <thead>
                 <tr className="bg-forest">
-                  <th className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider w-1/3">
-                    Parameter
-                  </th>
                   <th className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider">
                     Specification
                   </th>
+                  {specGrades.map((grade) => (
+                    <th
+                      key={grade}
+                      className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider"
+                    >
+                      {grade}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -160,7 +157,9 @@ export default function TurmericPage() {
                     className={`border-t border-gold/10 ${i % 2 === 0 ? "bg-white" : "bg-cream/60"}`}
                   >
                     <td className="px-6 py-4 text-brown font-medium">{spec.label}</td>
-                    <td className="px-6 py-4 text-brown/70">{spec.value}</td>
+                    {spec.values.map((value, j) => (
+                      <td key={j} className="px-6 py-4 text-brown/70">{value}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>

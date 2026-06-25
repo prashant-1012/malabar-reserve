@@ -36,22 +36,22 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  "Whole Black Pepper",
-  "Bold Pepper",
-  "FAQ Grade Pepper",
-  "Steam Sterilized Pepper",
-  "Custom Packaging Available",
+  "GI-Tagged Malabar Pepper",
+  "Premium Export Grades",
+  "Steam-Sterilized Pepper",
+  "Bulk Supply for Global Markets",
+  "Private Label & Custom Packaging",
 ];
 
+const specGrades = ["TGSEB", "TGEB", "TG"];
+
 const specs = [
-  { label: "Origin", value: "Kerala, South India" },
-  { label: "Moisture Content", value: "Max 12%" },
-  { label: "Purity", value: "Min 99%" },
-  { label: "Shelf Life", value: "24 months" },
-  { label: "Minimum Order Quantity", value: "500 kg" },
-  { label: "Packaging Options", value: "25 kg / 50 kg sacks, Retail pouches, Vacuum packs, Custom" },
-  { label: "Certifications", value: "FSSAI, ISO 22000" },
-  { label: "Available Forms", value: "Whole, Cracked, Powder" },
+  { label: "Quality Level", values: ["Ultra Premium", "Premium Plus", "Premium"] },
+  { label: "Berry Size", values: ["4.75 mm+", "4.25 mm+", "4.00 mm+"] },
+  { label: "Piperine Content", values: ["5–7%", "4.5–6.5%", "4–6%"] },
+  { label: "Purity", values: ["99% Min", "99% Min", "99% Min"] },
+  { label: "Moisture", values: ["Max 12%", "Max 12%", "Max 12%"] },
+  { label: "Aroma", values: ["Exceptional", "Strong", "Rich"] },
 ];
 
 const features = [
@@ -82,26 +82,21 @@ export default function BlackPepperPage() {
             <div className="flex flex-col gap-5">
               <SectionHeading
                 eyebrow="Product Overview"
-                title="About Our Black Pepper"
+                title="About Our GI-Tagged Malabar Pepper"
                 align="left"
               />
               <div className="flex flex-col gap-4 font-inter text-sm text-brown/70 leading-relaxed">
                 <p>
-                  Known as the &ldquo;King of Spices,&rdquo; our black pepper is sourced from premium
-                  growing regions in South India — particularly the fertile highlands of Kerala.
-                  Bold flavour, rich aroma, and export-grade quality make it suitable for culinary,
-                  retail, and industrial applications.
+                  Known as the &ldquo;King of Spices,&rdquo; GI-Tagged Malabar Pepper is prized for
+                  its bold flavour, rich aroma, and exceptional quality. Sourced from the fertile
+                  spice-growing regions of Kerala&apos;s historic Malabar Coast, it reflects
+                  centuries of cultivation heritage and authentic origin.
                 </p>
                 <p>
-                  Our black pepper undergoes rigorous sorting, cleaning, and grading before
-                  packaging, ensuring every batch meets international food safety standards. We
-                  work directly with trusted farming partners to guarantee traceability from
-                  farm to shipment.
-                </p>
-                <p>
-                  Whether you need whole peppercorns for retail shelving, steam-sterilized pepper
-                  for food processing, or bulk FAQ grade for industrial use, we supply it all
-                  with consistent quality and reliable lead times.
+                  At Malabar Reserve, we work directly with trusted growers to source, clean,
+                  grade, and export premium-quality pepper that meets international standards.
+                  With complete traceability, consistent quality, and reliable supply, we serve
+                  importers, wholesalers, food manufacturers, and private-label brands worldwide.
                 </p>
               </div>
             </div>
@@ -141,12 +136,17 @@ export default function BlackPepperPage() {
             <table className="w-full text-sm font-inter">
               <thead>
                 <tr className="bg-forest">
-                  <th className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider w-1/3">
-                    Parameter
-                  </th>
                   <th className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider">
                     Specification
                   </th>
+                  {specGrades.map((grade) => (
+                    <th
+                      key={grade}
+                      className="text-left px-6 py-4 text-white font-semibold text-xs uppercase tracking-wider"
+                    >
+                      {grade}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -156,7 +156,9 @@ export default function BlackPepperPage() {
                     className={`border-t border-gold/10 ${i % 2 === 0 ? "bg-white" : "bg-cream/60"}`}
                   >
                     <td className="px-6 py-4 text-brown font-medium">{spec.label}</td>
-                    <td className="px-6 py-4 text-brown/70">{spec.value}</td>
+                    {spec.values.map((value, j) => (
+                      <td key={j} className="px-6 py-4 text-brown/70">{value}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
