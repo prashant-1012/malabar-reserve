@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://malabar-reserve.vercel.app/photos-to-use/ogImage.jpeg",
+        url: "https://malabar-reserve.vercel.app/photos-to-use/ogimage2.jpg",
         width: 1200,
         height: 630,
         alt: "Malabar Reserve – Premium Indian Spice Exporters",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Malabar Reserve | Premium Indian Spice Exporters",
     description:
       "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
-    images: ["https://malabar-reserve.vercel.app/photos-to-use/ogImage.jpeg"],
+    images: ["https://malabar-reserve.vercel.app/photos-to-use/ogimage2.jpg"],
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://malabar-reserve.vercel.app"
