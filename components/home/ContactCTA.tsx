@@ -6,14 +6,14 @@ export default function ContactCTA() {
     // 8.1 — slightly darker bg to distinguish from the forest green CTA bar above in WhyChooseUs
     <section
       className="relative section-padding overflow-hidden"
-      style={{ backgroundColor: "#121D15" }}
+      style={{ backgroundColor: "#161D12" }}
     >
       {/* 8.5 — subtle diagonal texture for depth */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #9C7830 0px, #9C7830 1px, transparent 1px, transparent 12px)",
+            "repeating-linear-gradient(45deg, #9B7733 0px, #9B7733 1px, transparent 1px, transparent 12px)",
         }}
       />
 

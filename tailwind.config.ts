@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        forest: "#17241A",
-        gold: "#9C7830",
-        "gold-dark": "#7D6026",
-        cream: "#F5F0E8",
+        forest: "#1C2417",
+        gold: "#9B7733",
+        "gold-dark": "#7C5F29",
+        cream: "#F6EDE3",
         brown: "#3D2B1F",
       },
       fontFamily: {

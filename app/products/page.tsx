@@ -50,7 +50,7 @@ export default function ProductsPage() {
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 25% 50%, #9C7830 1px, transparent 1px), radial-gradient(circle at 75% 50%, #9C7830 1px, transparent 1px)",
+              "radial-gradient(circle at 25% 50%, #9B7733 1px, transparent 1px), radial-gradient(circle at 75% 50%, #9B7733 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />

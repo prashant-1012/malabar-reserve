@@ -19,7 +19,7 @@ export default function HeroSection() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover object-top"
-        src="/photos-to-use/hero-video2.mp4"
+        src="/photos-to-use/hero-video3.mp4"
       />
 
       {/* 2.1 — Lighter gradient so video breathes through */}

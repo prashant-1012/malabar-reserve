@@ -76,11 +76,19 @@ export default function AboutPage() {
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, #9C7830 1px, transparent 1px), radial-gradient(circle at 80% 50%, #9C7830 1px, transparent 1px)",
+              "radial-gradient(circle at 20% 50%, #9B7733 1px, transparent 1px), radial-gradient(circle at 80% 50%, #9B7733 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-5">
+          <Image
+            src="/photos-to-use/logo-full-light.png"
+            alt="Malabar Reserve"
+            width={500}
+            height={500}
+            priority
+            className="h-28 sm:h-32 md:h-36 w-auto"
+          />
           <div className="flex items-center gap-3">
             <div className="h-px w-10 bg-gold/50" />
             <Leaf size={16} className="text-gold" />

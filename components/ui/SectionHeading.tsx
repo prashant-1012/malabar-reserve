@@ -41,9 +41,9 @@ export default function SectionHeading({
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path
               d="M8 1C8 1 4 4.5 4 8.5C4 10.8 5.8 12.5 8 12.5C10.2 12.5 12 10.8 12 8.5C12 4.5 8 1 8 1Z"
-              fill="#9C7830"
+              fill="#9B7733"
             />
-            <line x1="8" y1="1" x2="8" y2="15" stroke="#17241A" strokeWidth="0.8" strokeLinecap="round" />
+            <line x1="8" y1="1" x2="8" y2="15" stroke="#1C2417" strokeWidth="0.8" strokeLinecap="round" />
           </svg>
           <div className="h-px w-8 bg-gold" />
         </div>
