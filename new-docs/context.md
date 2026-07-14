@@ -189,8 +189,8 @@ The feature icons render as a full-width `bg-forest` bar below the product secti
 
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_WHATSAPP_NUMBER=919999999999
-NEXT_PUBLIC_CONTACT_EMAIL=info@malabarreserve.co
+NEXT_PUBLIC_WHATSAPP_NUMBER=918149455501
+NEXT_PUBLIC_CONTACT_EMAIL=hello@malabarreserve.co
 NEXT_PUBLIC_SITE_DOMAIN=malabarreserve.co
 ```
 
@@ -230,6 +230,6 @@ Node 18+ required. No env vars needed for dev (defaults are hardcoded).
 - **No backend/database** — purely frontend. Contact form needs a real handler if submission is required.
 - **Hero uses video** (`/photos-to-use/hero-video2.mp4`), not a static image. Keep this in mind when editing the hero layout.
 - **`rounded-none`** on all primary CTA buttons — this is intentional brand style, don't change to rounded.
-- **WhatsApp number** is a placeholder (`919999999999`) — needs to be updated with real number before production use.
+- **Contact details are real** — phone/WhatsApp `+91 81494 55501`, email `hello@malabarreserve.co`, address `43/1574, Kochapilly Road, Palarivattom, Ernakulam, Kerala, India, 682025` (updated 2026-07-14). Live in [components/layout/WhatsAppButton.tsx](../components/layout/WhatsAppButton.tsx), [components/layout/Footer.tsx](../components/layout/Footer.tsx), and [app/contact/page.tsx](../app/contact/page.tsx).
 - **`green-cardmom.png`** — note the typo in the filename (missing 'a'). Don't rename it without updating all references.
 - The `photos-to-use/` folder exists both in the repo root (source) and in `public/photos-to-use/` (served). The `public/` version is what Next.js serves.

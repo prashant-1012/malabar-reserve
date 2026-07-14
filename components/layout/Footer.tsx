@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Globe } from "lucide-react";
+import { Mail, Globe, Phone, MapPin } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 
 const navLinks = [
@@ -85,11 +85,20 @@ export default function Footer() {
             <ul className="flex flex-col gap-3.5">
               <li>
                 <a
-                  href="mailto:info@malabarreserve.co"
+                  href="mailto:hello@malabarreserve.co"
                   className="flex items-center gap-2 font-inter text-sm text-white/70 hover:text-white transition-colors duration-200"
                 >
                   <Mail size={14} className="text-gold flex-shrink-0" />
-                  info@malabarreserve.co
+                  hello@malabarreserve.co
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+918149455501"
+                  className="flex items-center gap-2 font-inter text-sm text-white/70 hover:text-white transition-colors duration-200"
+                >
+                  <Phone size={14} className="text-gold flex-shrink-0" />
+                  +91 81494 55501
                 </a>
               </li>
               <li>
@@ -102,6 +111,12 @@ export default function Footer() {
                   <Globe size={14} className="text-gold flex-shrink-0" />
                   malabarreserve.co
                 </a>
+              </li>
+              <li className="flex items-start gap-2 font-inter text-sm text-white/70">
+                <MapPin size={14} className="text-gold flex-shrink-0 mt-0.5" />
+                <span>
+                  43/1574, Kochapilly Road, Palarivattom, Ernakulam, Kerala, India, 682025
+                </span>
               </li>
             </ul>
 

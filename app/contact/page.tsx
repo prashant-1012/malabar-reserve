@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Malabar Reserve",
     title: "Contact Us | Malabar Reserve",
     description:
-      "Reach out to Malabar Reserve for your spice export requirements. Email: info@malabarreserve.co",
+      "Reach out to Malabar Reserve for your spice export requirements. Email: hello@malabarreserve.co",
     url: "https://malabarreserve.co/contact",
     locale: "en_US",
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Us | Malabar Reserve",
     description:
-      "Reach out to Malabar Reserve for your spice export requirements. Email: info@malabarreserve.co",
+      "Reach out to Malabar Reserve for your spice export requirements. Email: hello@malabarreserve.co",
   },
 };
 
@@ -45,8 +45,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@malabarreserve.co",
-    href: "mailto:info@malabarreserve.co",
+    value: "hello@malabarreserve.co",
+    href: "mailto:hello@malabarreserve.co",
   },
   {
     icon: Globe,
@@ -57,13 +57,13 @@ const contactDetails = [
   {
     icon: Phone,
     label: "WhatsApp",
-    value: "+91 99999 99999",
-    href: "https://wa.me/919999999999",
+    value: "+91 81494 55501",
+    href: "https://wa.me/918149455501",
   },
   {
     icon: MapPin,
-    label: "Origin",
-    value: "Kerala, South India",
+    label: "Address",
+    value: "43/1574, Kochapilly Road, Palarivattom, Ernakulam, Kerala, India, 682025",
     href: null,
   },
 ];

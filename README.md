@@ -198,8 +198,8 @@ Create a `.env.local` file in the root:
 
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_WHATSAPP_NUMBER=919999999999
-NEXT_PUBLIC_CONTACT_EMAIL=info@malabarreserve.co
+NEXT_PUBLIC_WHATSAPP_NUMBER=918149455501
+NEXT_PUBLIC_CONTACT_EMAIL=hello@malabarreserve.co
 NEXT_PUBLIC_SITE_DOMAIN=malabarreserve.co
 ```
 
@@ -249,8 +249,9 @@ All products are FSSAI & ISO 22000 certified, with MOQs starting from 250 kg.
 
 **Malabar Reserve**
 - 🌐 Website: [malabarreserve.co](https://malabarreserve.co)
-- 📧 Email: [info@malabarreserve.co](mailto:info@malabarreserve.co)
-- 💬 WhatsApp: +91 99999 99999
+- 📧 Email: [hello@malabarreserve.co](mailto:hello@malabarreserve.co)
+- 💬 WhatsApp: +91 81494 55501
+- 📍 Address: 43/1574, Kochapilly Road, Palarivattom, Ernakulam, Kerala, India, 682025
 
 ---
 
