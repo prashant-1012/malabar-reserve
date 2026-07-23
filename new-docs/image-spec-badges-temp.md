@@ -13,8 +13,20 @@ the live deployed site.
 
 `components/ui/ImageSpecBadge.tsx` — a new component. Renders a small dark bar with a
 gold border reading e.g. `Photo needed: Black Pepper Product Photo · Square · min
-1800×1800px · JPG or PNG`, absolutely positioned over the image it documents (`bottom`
-by default, `top` where a bottom-anchored caption/content would otherwise collide).
+1800×1800px · JPG or PNG` plus a second line `Save file as: black-pepper.png`,
+absolutely positioned over the image it documents (`bottom` by default, `top` where a
+bottom-anchored caption/content would otherwise collide).
+
+**Filename convention:** for images that already had a local file (about-us.png,
+why-partner-us.png, black-pepper.png, green-cardmom.png, turmeric_roots.webp), the badge
+shows that exact existing filename — the client's replacement should keep the same name
+so no code changes are needed to swap it in. For the 13 images that were still hot-linked
+Unsplash stock photos with no local filename (4 export-process steps, 6 industry cards,
+3 product-detail hero banners), there was nothing to reuse — new filenames were invented
+now (e.g. `export-origin-selection.jpg`, `industry-food-manufacturers.jpg`,
+`black-pepper-banner.jpg`) so the client can name their delivered files consistently and
+whoever wires them in later just drops them into `public/photos-to-use/` and swaps the
+`src`/`image` string to match.
 
 Wired into 9 existing image containers (all already `position: relative` with an
 `<Image fill>` inside, so no layout was otherwise changed):

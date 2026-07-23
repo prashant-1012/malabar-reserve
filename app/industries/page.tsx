@@ -51,6 +51,7 @@ const industries = [
     alt: "Food manufacturing production line with workers in clean room",
     description:
       "Consistent, high-volume spice supply for production lines. We meet strict food safety requirements and offer flexible bulk packaging to suit your processes.",
+    fileName: "industry-food-manufacturers.jpg",
   },
   {
     name: "Spice Importers",
@@ -59,6 +60,7 @@ const industries = [
     alt: "Cargo shipping containers at international port",
     description:
       "Reliable origin-to-destination logistics, proper documentation, and quality-certified spices for importers who need a dependable long-term supply partner.",
+    fileName: "industry-spice-importers.jpg",
   },
   {
     name: "Wholesale Distributors",
@@ -67,6 +69,7 @@ const industries = [
     alt: "Large warehouse with stacked inventory on shelves",
     description:
       "Bulk quantities with competitive pricing, consistent grade quality, and scalable supply volumes designed for regional and national distribution networks.",
+    fileName: "industry-wholesale-distributors.jpg",
   },
   {
     name: "Retail Brands",
@@ -75,6 +78,7 @@ const industries = [
     alt: "Retail spice shelves with premium packaged products",
     description:
       "Shelf-ready spices in retail-friendly packaging. We work with brands to ensure presentation, freshness, and labelling align with your market positioning.",
+    fileName: "industry-retail-brands.jpg",
   },
   {
     name: "Hospitality & Culinary Businesses",
@@ -83,6 +87,7 @@ const industries = [
     alt: "Professional chef preparing gourmet food in a restaurant kitchen",
     description:
       "Premium-grade spices trusted by hotels, restaurants, and culinary institutions that demand uncompromising flavour and aroma in every dish.",
+    fileName: "industry-hospitality-culinary.jpg",
   },
   {
     name: "Private Label Companies",
@@ -91,6 +96,7 @@ const industries = [
     alt: "Custom branded spice packaging for private label products",
     description:
       "Your brand, our quality. We offer full private label services — custom packaging design, labelling, and branded spice products ready for your market.",
+    fileName: "industry-private-label.jpg",
   },
 ];
 
@@ -162,7 +168,7 @@ export default function IndustriesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industries.map(({ name, icon: Icon, image, alt, description }) => (
+            {industries.map(({ name, icon: Icon, image, alt, description, fileName }) => (
               <div
                 key={name}
                 className="group flex flex-col rounded-xl overflow-hidden border border-cream hover:border-gold/30 hover:shadow-lg transition-all duration-300 bg-white"
@@ -189,7 +195,7 @@ export default function IndustriesPage() {
                     </h3>
                   </div>
 
-                  <ImageSpecBadge label={`${name} Photo`} ratio="4:3" size="1600×1200" />
+                  <ImageSpecBadge label={`${name} Photo`} ratio="4:3" size="1600×1200" fileName={fileName} />
                 </div>
 
                 {/* Description */}

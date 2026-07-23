@@ -2,19 +2,22 @@ interface ImageSpecBadgeProps {
   label: string;
   ratio: string;
   size: string;
+  fileName: string;
   format?: string;
   position?: "top" | "bottom";
 }
 
 /**
  * Temporary overlay shown on top of placeholder images so the client can see
- * exactly what replacement photo (dimensions/ratio/format) is needed for each spot.
- * Remove all usages (or set NEXT_PUBLIC_SHOW_IMAGE_SPECS=false) once real photos are in.
+ * exactly what replacement photo (dimensions/ratio/format/filename) is needed for
+ * each spot. Remove all usages (or set NEXT_PUBLIC_SHOW_IMAGE_SPECS=false) once real
+ * photos are in.
  */
 export default function ImageSpecBadge({
   label,
   ratio,
   size,
+  fileName,
   format = "JPG",
   position = "bottom",
 }: ImageSpecBadgeProps) {
@@ -27,6 +30,9 @@ export default function ImageSpecBadge({
       <p className="font-inter text-[10px] sm:text-[11px] leading-snug text-white">
         <span className="font-bold uppercase tracking-wide text-gold">Photo needed: </span>
         {label} &middot; {ratio} &middot; min {size}px &middot; {format}
+      </p>
+      <p className="font-inter text-[10px] sm:text-[11px] leading-snug text-gold font-semibold mt-0.5">
+        Save file as: {fileName}
       </p>
     </div>
   );

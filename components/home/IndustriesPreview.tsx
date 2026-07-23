@@ -13,6 +13,7 @@ const industries = [
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
     alt: "Food manufacturing production line",
     description: "Bulk supply for large-scale production requirements.",
+    fileName: "industry-food-manufacturers.jpg",
   },
   {
     name: "Spice Importers",
@@ -20,6 +21,7 @@ const industries = [
     image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80",
     alt: "Shipping containers at international port",
     description: "Export-ready consignments with full documentation.",
+    fileName: "industry-spice-importers.jpg",
   },
   {
     name: "Wholesale Distributors",
@@ -27,6 +29,7 @@ const industries = [
     image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80",
     alt: "Large warehouse with stacked shelves and products",
     description: "Consistent volume and grade for distribution networks.",
+    fileName: "industry-wholesale-distributors.jpg",
   },
   {
     name: "Retail Brands",
@@ -34,6 +37,7 @@ const industries = [
     image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80",
     alt: "Retail spice store shelves with packaged products",
     description: "Retail-ready quality with flexible packaging formats.",
+    fileName: "industry-retail-brands.jpg",
   },
   {
     name: "Hospitality & Culinary",
@@ -41,6 +45,7 @@ const industries = [
     image: "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=800&q=80",
     alt: "Professional chef preparing food in restaurant kitchen",
     description: "Premium-grade spices for chefs and culinary professionals.",
+    fileName: "industry-hospitality-culinary.jpg",
   },
   {
     name: "Private Label Companies",
@@ -48,6 +53,7 @@ const industries = [
     image: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&q=80",
     alt: "Custom branded spice packaging for private label",
     description: "Custom branding, private labelling, and OEM solutions.",
+    fileName: "industry-private-label.jpg",
   },
 ];
 
@@ -70,7 +76,7 @@ export default function IndustriesPreview() {
 
         {/* 7.1 + 7.2 + 7.3 — bottom-left anchored content, lighter overlay, refined border */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-          {industries.map(({ name, icon: Icon, image, alt, description }, index) => {
+          {industries.map(({ name, icon: Icon, image, alt, description, fileName }, index) => {
             const isActive = activeCard === index;
             return (
               <div
@@ -135,7 +141,7 @@ export default function IndustriesPreview() {
                   </p>
                 </div>
 
-                <ImageSpecBadge label={`${name} Photo`} ratio="4:3" size="1600×1200" />
+                <ImageSpecBadge label={`${name} Photo`} ratio="4:3" size="1600×1200" fileName={fileName} />
               </div>
             );
           })}

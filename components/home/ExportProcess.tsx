@@ -16,6 +16,7 @@ const steps = [
     image:
       "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80",
     alt: "Spice farmer harvesting black pepper in Kerala",
+    fileName: "export-origin-selection.jpg",
   },
   {
     number: "02",
@@ -26,6 +27,7 @@ const steps = [
     image:
       "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=800&q=80",
     alt: "Quality selection and grading of premium spices",
+    fileName: "export-quality-assurance.jpg",
   },
   {
     number: "03",
@@ -36,6 +38,7 @@ const steps = [
     image:
       "https://images.unsplash.com/photo-1565118531796-763e5082d113?w=800&q=80",
     alt: "Hygienic spice processing and packaging facility",
+    fileName: "export-processing.jpg",
   },
   {
     number: "04",
@@ -46,6 +49,7 @@ const steps = [
     image:
       "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80",
     alt: "Shipping containers at international port for global export",
+    fileName: "export-distribution.jpg",
   },
 ];
 
@@ -113,7 +117,7 @@ export default function ExportProcess() {
                       <span className="font-playfair font-bold text-sm text-gold">{step.number}</span>
                     </div>
 
-                    <ImageSpecBadge label={`${step.title} Photo`} ratio="4:3" size="1200×900" />
+                    <ImageSpecBadge label={`${step.title} Photo`} ratio="4:3" size="1200×900" fileName={step.fileName} />
                   </div>
 
                   {/* 5.5 — icon removed, step title + gold rule + description only */}

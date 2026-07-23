@@ -27,7 +27,7 @@ export default function AboutPreview() {
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <ImageSpecBadge label="About / Story Photo" ratio="Landscape" size="2400×1600" />
+            <ImageSpecBadge label="About / Story Photo" ratio="Landscape" size="2400×1600" fileName="about-us.png" />
           </div>
 
           {/* Text content */}

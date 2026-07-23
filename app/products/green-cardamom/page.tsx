@@ -70,6 +70,7 @@ export default function GreenCardamomPage() {
         imageSrc="https://images.unsplash.com/photo-1547592180-85f173990554?w=1600&q=80"
         imageAlt="Green cardamom pods fresh from the highland spice gardens of Idukki, Kerala"
         breadcrumb="Green Cardamom"
+        imageFileName="green-cardamom-banner.jpg"
       />
 
       {/* ── Overview + Options ──────────────────────────────── */}

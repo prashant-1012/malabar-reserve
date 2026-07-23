@@ -123,6 +123,7 @@ export default function AboutPage() {
           label="About Banner (same photo as homepage About section)"
           ratio="Wide banner"
           size="2400×1600"
+          fileName="about-us.png"
           position="top"
         />
 

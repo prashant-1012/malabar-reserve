@@ -80,6 +80,7 @@ export default function ProductsPreview() {
                   ratio="Square"
                   size="1800×1800"
                   format="JPG or PNG"
+                  fileName={product.image.split("/").pop() as string}
                 />
               </div>
 

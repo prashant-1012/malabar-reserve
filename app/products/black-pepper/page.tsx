@@ -71,6 +71,7 @@ export default function BlackPepperPage() {
         imageSrc="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=1600&q=80"
         imageAlt="Black pepper peppercorns close up on a spice farm in Kerala"
         breadcrumb="Black Pepper"
+        imageFileName="black-pepper-banner.jpg"
       />
 
       {/* ── Overview + Options ──────────────────────────────── */}

@@ -61,6 +61,7 @@ export default function ProductSection({
               ratio="Square"
               size="1800×1800"
               format="JPG or PNG"
+              fileName={imageSrc.split("/").pop() as string}
             />
           </div>
 

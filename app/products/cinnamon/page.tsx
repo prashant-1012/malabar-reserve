@@ -69,6 +69,7 @@ export default function CinnamonPage() {
         imageSrc="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
         imageAlt="Premium cinnamon sticks bundled together with cinnamon powder and bark"
         breadcrumb="Cinnamon"
+        imageFileName="cinnamon-banner.jpg"
       />
 
       {/* ── Overview + Options ──────────────────────────────── */}

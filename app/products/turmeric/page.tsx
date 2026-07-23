@@ -72,6 +72,7 @@ export default function TurmericPage() {
         imageSrc="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=1600&q=80"
         imageAlt="Fresh turmeric roots and turmeric powder on a wooden surface"
         breadcrumb="Turmeric"
+        imageFileName="turmeric-banner.jpg"
       />
 
       {/* ── Overview + Options ──────────────────────────────── */}
