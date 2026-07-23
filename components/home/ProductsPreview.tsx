@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 const products = [
   {
@@ -73,6 +74,13 @@ export default function ProductsPreview() {
                     {product.tag}
                   </span>
                 </div>
+
+                <ImageSpecBadge
+                  label={`${product.name} Product Photo`}
+                  ratio="Square"
+                  size="1800×1800"
+                  format="JPG or PNG"
+                />
               </div>
 
               {/* Content */}

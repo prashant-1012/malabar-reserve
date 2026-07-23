@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Factory, Ship, Warehouse, ShoppingBag, ChefHat, Tag } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 const industries = [
   {
@@ -133,6 +134,8 @@ export default function IndustriesPreview() {
                     {description}
                   </p>
                 </div>
+
+                <ImageSpecBadge label={`${name} Photo`} ratio="4:3" size="1600×1200" />
               </div>
             );
           })}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Leaf, Search, Package, Globe } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 const steps = [
   {
@@ -112,6 +113,7 @@ export default function ExportProcess() {
                       <span className="font-playfair font-bold text-sm text-gold">{step.number}</span>
                     </div>
 
+                    <ImageSpecBadge label={`${step.title} Photo`} ratio="4:3" size="1200×900" />
                   </div>
 
                   {/* 5.5 — icon removed, step title + gold rule + description only */}

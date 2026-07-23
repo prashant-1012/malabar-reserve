@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Leaf, Handshake, Globe, ShieldCheck } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 const features = [
   { icon: Leaf, label: "Authentic Indian Spices" },
@@ -26,6 +27,7 @@ export default function AboutPreview() {
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <ImageSpecBadge label="About / Story Photo" ratio="Landscape" size="2400×1600" />
           </div>
 
           {/* Text content */}

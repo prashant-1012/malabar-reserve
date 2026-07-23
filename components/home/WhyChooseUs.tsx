@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Award, Handshake, Globe, Box, Check, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 const features: { icon: LucideIcon; title: string; description: string }[] = [
   {
@@ -102,6 +103,7 @@ export default function WhyChooseUs() {
               />
               {/* Subtle gold shimmer on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <ImageSpecBadge label="Why Choose Us Photo" ratio="4:3" size="1600×1200" />
             </div>
           </div>
         </div>

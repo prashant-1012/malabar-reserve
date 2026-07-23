@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Leaf, Handshake, Globe, ShieldCheck, Award, Users, TrendingUp, Heart } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -118,6 +119,12 @@ export default function AboutPage() {
         />
         {/* Bottom fade into next section */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream/60" />
+        <ImageSpecBadge
+          label="About Banner (same photo as homepage About section)"
+          ratio="Wide banner"
+          size="2400×1600"
+          position="top"
+        />
 
         {/* Floating caption card */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-lg px-4 sm:px-6 py-3 shadow-lg border border-gold/20 text-center w-[90%] sm:w-auto max-w-sm sm:max-w-none">

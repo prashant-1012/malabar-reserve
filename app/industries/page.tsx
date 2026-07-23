@@ -11,6 +11,7 @@ import {
   Leaf,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
@@ -187,6 +188,8 @@ export default function IndustriesPage() {
                       {name}
                     </h3>
                   </div>
+
+                  <ImageSpecBadge label={`${name} Photo`} ratio="4:3" size="1600×1200" />
                 </div>
 
                 {/* Description */}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 interface ProductDetailHeroProps {
   title: string;
@@ -29,6 +30,7 @@ export default function ProductDetailHero({
       />
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
+      <ImageSpecBadge label={`${title} Banner Photo`} ratio="Wide 3:1" size="2400×800" position="top" />
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-16">

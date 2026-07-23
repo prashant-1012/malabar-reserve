@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, LucideIcon } from "lucide-react";
+import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 interface FeatureIcon {
   icon: LucideIcon;
@@ -55,6 +56,12 @@ export default function ProductSection({
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 ring-1 ring-gold/20 rounded-xl pointer-events-none" />
+            <ImageSpecBadge
+              label={`${title} Product Photo`}
+              ratio="Square"
+              size="1800×1800"
+              format="JPG or PNG"
+            />
           </div>
 
           {/* Text content */}
