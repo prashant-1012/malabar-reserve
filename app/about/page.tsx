@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Leaf, Handshake, Globe, ShieldCheck, Award, Users, TrendingUp, Heart } from "lucide-react";
+import { Leaf, Handshake, Globe, ShieldCheck, Award, Sprout, Eye } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
@@ -35,28 +35,28 @@ export const metadata: Metadata = {
 
 const values = [
   {
+    icon: Sprout,
+    title: "Source with Purpose",
+    description:
+      "We work closely with trusted growers and suppliers to identify spices with exceptional quality and provenance.",
+  },
+  {
     icon: Award,
-    title: "Uncompromising Quality",
+    title: "Quality Without Compromise",
     description:
-      "Every batch is carefully graded, tested, and inspected before leaving our facility. We accept nothing less than the best.",
+      "From sourcing and grading to storage and packaging, we focus on preserving the natural character and quality of every spice.",
   },
   {
-    icon: Heart,
-    title: "Rooted in Heritage",
+    icon: Eye,
+    title: "Traceability Matters",
     description:
-      "Inspired by centuries-old spice trade routes of the Malabar Coast, we honour the traditions that gave Kerala its identity.",
+      "We believe customers should know more about where their food comes from and how it reaches them.",
   },
   {
-    icon: Users,
-    title: "Partner-First Mindset",
+    icon: Handshake,
+    title: "Integrity in Every Relationship",
     description:
-      "We build long-term relationships with our buyers — not just transactions. Your growth drives our commitment.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Global Standards",
-    description:
-      "Our processes meet international food safety and quality benchmarks so your supply chain is always compliant and reliable.",
+      "Whether working with a farmer, supplier, importer, retailer or customer, we believe long-term relationships are built on transparency and consistency.",
   },
 ];
 
@@ -82,14 +82,6 @@ export default function AboutPage() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-5">
-          <Image
-            src="/photos-to-use/logo-full-light.png"
-            alt="Malabar Reserve"
-            width={500}
-            height={500}
-            priority
-            className="h-28 sm:h-32 md:h-36 w-auto"
-          />
           <div className="flex items-center gap-3">
             <div className="h-px w-10 bg-gold/50" />
             <Leaf size={16} className="text-gold" />
@@ -101,9 +93,6 @@ export default function AboutPage() {
           <h1 className="font-playfair font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight max-w-3xl">
             About Malabar Reserve
           </h1>
-          <p className="font-inter text-base text-white/65 max-w-xl leading-relaxed">
-            The Heritage of India&apos;s Authentic GI-Tagged Spices
-          </p>
         </div>
       </section>
 
@@ -143,8 +132,8 @@ export default function AboutPage() {
             {/* Left: heading */}
             <div className="lg:sticky lg:top-24">
               <SectionHeading
-                eyebrow="About Us"
-                title="The Heritage of India's Authentic GI-Tagged Spices"
+                eyebrow="Our Story"
+                title="Two Roots, One Vision"
                 align="left"
                 theme="dark"
                 ornament
@@ -162,34 +151,60 @@ export default function AboutPage() {
             {/* Right: story paragraphs */}
             <div className="flex flex-col gap-6 font-inter text-base text-brown/70 leading-relaxed">
               <p>
-                Malabar Reserve brings the heritage of India&apos;s finest spices to global markets.
-                Inspired by the historic spice routes of the Malabar Coast, we specialize in
-                sourcing and exporting premium spices with a commitment to authenticity, quality,
-                and dependable trade.
+                Malabar Reserve began with two people from two different corners of India —
+                Saurav from West Bengal and Vismritha from Kerala — brought together by a shared
+                love for the flavours, culture and heritage of Indian spices.
               </p>
               <p>
-                Inspired by the historic spice routes of the Malabar Coast, our business is rooted
-                in a legacy that has connected India to the world for centuries. Today, we carry
-                that tradition forward by delivering carefully sourced spices that reflect the
-                distinctive character, quality, and provenance of their origins.
+                For Vismritha, spices have always been part of the land she grew up in, especially
+                the rich spice heritage of Kerala and the Malabar Coast. For Saurav, the journey
+                brought a different perspective, but the same appreciation for the depth and
+                diversity of Indian flavours.
               </p>
               <p>
-                Through a strong network of sourcing partners and direct relationships with
-                growers across Kerala and South India, we ensure traceability from farm to
-                shipment. Our commitment to transparency, dependable supply chains, and rigorous
-                quality standards enables us to build long-term partnerships with customers around
-                the world.
+                Together, they created Malabar Reserve with a simple vision: to bring
+                India&apos;s finest spices from their origins to kitchens around the world, with
+                careful sourcing, honest relationships and uncompromising quality.
               </p>
-              <p>
-                Our portfolio includes GI-Tagged Malabar Pepper, GI-Tagged Alleppey Green
-                Cardamom, and premium turmeric. Each product is carefully selected, processed in
-                hygienic facilities, and prepared to international standards, preserving the
-                authenticity and excellence that define India&apos;s rich spice heritage.
+              <p className="font-playfair italic text-xl text-forest">
+                Two roots. One vision. For the love of spice.
               </p>
-              <p>
-                At Malabar Reserve, every shipment is a reflection of our commitment to quality,
-                reliability, and the enduring legacy of the spice lands we proudly represent.
-              </p>
+
+              {/* Founders */}
+              <div className="grid grid-cols-2 gap-5 mt-4 max-w-md">
+                <div className="flex flex-col gap-3">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+                    <Image
+                      src="/photos-to-use/founder-vismritha.jpg"
+                      alt="Vismritha, Co-Founder of Malabar Reserve"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <p className="font-inter text-sm text-brown text-center">
+                    <span className="font-semibold">Vismritha</span>
+                    <br />
+                    <span className="text-brown/60 text-xs">Co-Founder</span>
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+                    <Image
+                      src="/photos-to-use/founder-saurav.png"
+                      alt="Saurav, Co-Founder of Malabar Reserve"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <p className="font-inter text-sm text-brown text-center">
+                    <span className="font-semibold">Saurav</span>
+                    <br />
+                    <span className="text-brown/60 text-xs">Co-Founder</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

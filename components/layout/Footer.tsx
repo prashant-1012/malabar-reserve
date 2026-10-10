@@ -5,7 +5,6 @@ import Logo from "@/components/ui/Logo";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
-  { label: "Industries", href: "/industries" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -14,6 +13,7 @@ const productLinks = [
   { label: "Black Pepper", href: "/products/black-pepper" },
   { label: "Green Cardamom", href: "/products/green-cardamom" },
   { label: "Turmeric", href: "/products/turmeric" },
+  { label: "Red Chilli", href: "/products/red-chilli" },
 ];
 
 export default function Footer() {

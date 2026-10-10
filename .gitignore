@@ -44,3 +44,10 @@ next-env.d.ts
 *.log
 .vercel
 .turbo
+
+# ─── Client-delivered source assets ────────────────────────
+# 679 MB of .ai/.psd/large source files. Kept on disk as the source of truth
+# for scripts/prepare-images.mjs, never committed and never deployed — it lives
+# under public/, so anything in here would otherwise be publicly served.
+# The web-ready WebP outputs in public/photos-to-use/ ARE committed.
+public/new-images/

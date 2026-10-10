@@ -36,7 +36,10 @@ No database, no auth, no CMS. Pure static/server rendering.
 
 Colors were retuned (2026-06-25) to match the real brand logo — see
 [color-and-logo-update.md](color-and-logo-update.md) for the full rationale and exact
-pixel-sampled source colors.
+pixel-sampled source colors. The logo itself was redesigned again since then (new
+circle+leaf+"MR" monogram + "Malabar Reserve" wordmark, tagline "For the Love of Spice") —
+see [2026-10-10-logo-chilli-industries-update.md](2026-10-10-logo-chilli-industries-update.md).
+The forest/gold tokens still match the current logo's ink colors exactly.
 
 **Typography:**
 - Headings: `font-playfair` (CSS var `--font-playfair`) — all `h1`–`h6` globally via `globals.css`
@@ -66,7 +69,8 @@ app/                        Next.js App Router pages
     black-pepper/page.tsx
     green-cardamom/page.tsx
     cinnamon/page.tsx
-  industries/page.tsx
+    turmeric/page.tsx
+    red-chilli/page.tsx
   contact/page.tsx
   sitemap.ts                Auto sitemap.xml
   robots.ts                 Auto robots.txt
@@ -82,7 +86,6 @@ components/
     ProductsPreview.tsx
     ExportProcess.tsx
     WhyChooseUs.tsx
-    IndustriesPreview.tsx
     ContactCTA.tsx
   products/
     ProductSection.tsx      Reusable alternating 2-col layout (image + text). Props: imagePosition left|right, bgColor white|cream, featureIcons bar at bottom
@@ -91,13 +94,14 @@ components/
   contact/
     ContactForm.tsx         Client component ("use client"). Fields: name, company, country, product (dropdown), quantity, message. Currently uses simulated delay + toast — no real backend submission.
   ui/
-    Logo.tsx                variant prop: "dark" (real logo image, light backgrounds) | "light" (coded white/gold text wordmark, dark backgrounds)
+    Logo.tsx                variant prop: "dark" (full-color icon+wordmark PNG, light backgrounds — Navbar scrolled/non-home pages) | "light" (white+gold recolored PNG, dark backgrounds — homepage hero Navbar, Footer). Both are single flattened `logo-navbar-*.png` images, not live coded text.
     SectionHeading.tsx      eyebrow + title + ornament divider + subtitle. Props: align (center|left), theme (dark|light), ornament (bool)
 
 public/
-  photos-to-use/            Local brand images — hero-video2.mp4, about-us.png, black-pepper.png, cinnamon.png, green-cardmom.png, hero-section.png, why-partner-us.png, ogImage.jpeg, logo-wide.png (navbar), logo-icon.png (favicon source), logo-square.png (unused, kept for future use)
-  favicon-32.png            32x32 favicon, generated from logo-icon.png
-  favicon-192.png           192x192 favicon / apple-touch-icon, generated from logo-icon.png
+  new-images/               Raw client-delivered assets (logos, founder photos, Red Chilli photo, and a `Pouch/` folder of packaging mockups for all 5 products/grades) — kept as source, not served directly. See [2026-10-10-logo-chilli-industries-update.md](2026-10-10-logo-chilli-industries-update.md) for what's been processed into photos-to-use/ vs left untouched.
+  photos-to-use/            Served brand images — hero-video2.mp4/3.mp4, about-us.png, black-pepper.png, cinnamon.png, green-cardmom.png (+ old typo'd green-cardmom.png), turmeric_roots.webp, red-chilli.png, why-partner-us.png, ogimage2.jpg, founder-vismritha.jpg, founder-saurav.png, logo-navbar-dark.png / logo-navbar-light.png (current Navbar/Footer logo), logo-icon-mark.png (favicon source), logo-primary-full.jpg / logo-submark-wordmark.png (unused, kept for future use), logo-square.png / logo-wide.png (older logo era, unused, kept for future use)
+  favicon-32.png            32x32 favicon, generated from logo-icon-mark.png
+  favicon-192.png           192x192 favicon / apple-touch-icon, generated from logo-icon-mark.png
   favicon.svg                old favicon, unreferenced — kept on disk but unused
 ```
 
@@ -109,24 +113,29 @@ public/
 Sections (top→bottom):
 1. **HeroSection** — video BG, headline, 2 CTAs, 5 feature icons
 2. **AboutPreview** — two-column, Kerala houseboat image
-3. **ProductsPreview** — 3 product cards
+3. **ProductsPreview** — 4 product cards (Black Pepper, Green Cardamom, Turmeric, Red Chilli)
 4. **ExportProcess** — 4-step cards
 5. **WhyChooseUs** — 5 feature icons + spice flat-lay image + contact CTA bar
-6. **IndustriesPreview** — 6 photo cards
-7. **ContactCTA** — forest green, "Let's Build a Partnership"
+6. **ContactCTA** — forest green, "Let's Build a Partnership"
+
+There is no Industries page/section anymore — removed 2026-10-10, see
+[2026-10-10-logo-chilli-industries-update.md](2026-10-10-logo-chilli-industries-update.md).
 
 ### About (`/about`)
-Hero banner → houseboat full-width image → company story (2-col sticky) → 4 values cards → 4-icon feature bar
+Hero banner (no logo image, just "Our Story" eyebrow + "About Malabar Reserve" title — no
+tagline line) → houseboat full-width image → founders' story (2-col sticky, "Two Roots, One
+Vision") with the two founders' portraits (Vismritha, Saurav) → 4 values cards → 4-icon
+feature bar
 
 ### Products (`/products`)
-Three `ProductSection` components alternating image side (Black Pepper right, Cardamom left, Cinnamon right) + PackagingSolutions (pure CSS, no images) + packaging USP bar
+Four `ProductSection` components alternating image side (Black Pepper right, Cardamom left,
+Turmeric right, Red Chilli left) + PackagingSolutions (pure CSS, no images) + packaging USP
+bar
 
 ### Individual Product Pages
-`/products/black-pepper`, `/products/green-cardamom`, `/products/cinnamon`
+`/products/black-pepper`, `/products/green-cardamom`, `/products/turmeric`,
+`/products/cinnamon` (exists but not linked from nav/footer — see changelog), `/products/red-chilli`
 Each: Hero → Overview → Available Options → Specs Table → Feature Icons → CTA Card
-
-### Industries (`/industries`)
-Stats bar (30+ countries · 6 industries · 500+ partners) → 6 photo cards → closing CTA
 
 ### Contact (`/contact`)
 Two-column: left = contact info + response card, right = ContactForm component
@@ -139,10 +148,13 @@ Two-column: left = contact info + response card, right = ContactForm component
 |---|---|---|
 | Black Pepper | Kerala, South India | Whole · Bold · FAQ Grade · Steam Sterilized |
 | Green Cardamom | Idukki & Wayanad, Kerala | Whole pods · Decorticated seeds · Powder |
-| Cinnamon | Kerala, South India | Sticks · Bark · Powder |
+| Turmeric | South India | Whole fingers · Polished/unpolished · Powder |
+| Red Chilli | India | Kashmiri (mild) · Mid Spicy · Spicy ++ (extra hot) · Whole & Powder |
+| Cinnamon | Kerala, South India | Sticks · Bark · Powder — page exists but isn't linked from nav/footer |
 
 Certifications: FSSAI & ISO 22000. MOQ: 250 kg minimum.
-Export reach: 30+ countries, 500+ partners, 6 industries.
+The "30+ countries / 500+ partners / 6 industries" stats only ever lived on the removed
+Industries page — they aren't displayed anywhere on the site as of 2026-10-10.
 
 ---
 
@@ -151,7 +163,8 @@ Export reach: 30+ countries, 500+ partners, 6 industries.
 ### Navbar behavior
 - **Home page + not scrolled** → `bg-forest` (transparent dark green), Logo `variant="light"`, nav text white
 - **Scrolled or other pages** → `bg-white/95 backdrop-blur-md`, Logo `variant="dark"`, nav text brown
-- Products link opens a dropdown with "All Products" header + 3 individual product links
+- Products link opens a dropdown with "All Products" header + 4 individual product links (Black Pepper, Green Cardamom, Turmeric, Red Chilli)
+- No "Industries" nav item (removed 2026-10-10)
 - Mobile: animated max-height drawer, closes on route change
 
 ### SectionHeading usage
@@ -233,4 +246,7 @@ Node 18+ required. No env vars needed for dev (defaults are hardcoded).
 - **Contact details are real** — phone/WhatsApp `+91 81494 55501`, email `hello@malabarreserve.co`, address `43/1574, Kochapilly Road, Palarivattom, Ernakulam, Kerala, India, 682025` (updated 2026-07-14). Live in [components/layout/WhatsAppButton.tsx](../components/layout/WhatsAppButton.tsx), [components/layout/Footer.tsx](../components/layout/Footer.tsx), and [app/contact/page.tsx](../app/contact/page.tsx).
 - **`green-cardmom.png`** — note the typo in the filename (missing 'a'). Don't rename it without updating all references.
 - The `photos-to-use/` folder exists both in the repo root (source) and in `public/photos-to-use/` (served). The `public/` version is what Next.js serves.
-- **Temporary image-spec badges are currently live on every placeholder image** (added 2026-07-23, asking the client for replacement photos) — see [image-spec-badges-temp.md](image-spec-badges-temp.md) for what was added and how to remove it once real photos are in.
+- **Temporary image-spec badges are currently live on every placeholder image** (added 2026-07-23, asking the client for replacement photos) — see [image-spec-badges-temp.md](image-spec-badges-temp.md) for what was added and how to remove it once real photos are in. As of 2026-10-10, the badge is suppressed per-image via a `photoConfirmed` prop on `ProductSection`/`ProductDetailHero`/`ProductsPreview` wherever a real client photo has replaced a placeholder (currently just Red Chilli) — the other products' photos are still flagged as placeholders.
+- **4th product added 2026-10-10: Red Chilli** (`/products/red-chilli`), with three heat grades (Kashmiri, Mid Spicy, Spicy ++) sourced from `public/new-images/Pouch/Red Chilli Powder/`. See [2026-10-10-logo-chilli-industries-update.md](2026-10-10-logo-chilli-industries-update.md).
+- **Logo redesigned again 2026-10-10** — new circle+leaf+"MR" monogram, same brand green/gold ink colors as the current tokens. `Logo.tsx` now renders a single composed `logo-navbar-dark.png`/`logo-navbar-light.png` image per variant instead of the earlier two-image or icon+live-text hybrid approaches used in prior revisions.
+- **Industries page removed 2026-10-10** — `/industries` route, its homepage preview section, and all nav/footer/contact links to it are gone. The client-provided images meant for it (Food Manufacturer, Hospitality and Culinary, Retail Brands, Worldwide Distribution) and the full `Pouch/` packaging mockup set are sitting unused in `public/new-images/` for a future round.

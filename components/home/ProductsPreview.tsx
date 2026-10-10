@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
+import Grain from "@/components/ui/Grain";
+import Reveal from "@/components/motion/Reveal";
+import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
+import PressableLink from "@/components/motion/PressableLink";
 
 const products = [
   {
@@ -31,37 +35,48 @@ const products = [
     description:
       "High-Curcumin turmeric sourced from South India, valued for its purity, natural color, and exceptional quality.",
   },
+  {
+    name: "Red Chilli",
+    slug: "red-chilli",
+    image: "/photos-to-use/red-chilli.png",
+    alt: "Vibrant red chilli powder and sun-dried whole chillies",
+    tag: "Kashmiri to Extra Hot",
+    description:
+      "Sun-dried red chillies delivering vibrant colour, bold heat, and export-grade consistency across mild to extra-hot grades.",
+    photoConfirmed: true,
+  },
 ];
 
 export default function ProductsPreview() {
   return (
-    <section className="bg-white section-padding border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-white section-padding border-b border-gold/10">
+      <Grain opacity={0.025} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <div className="mb-12">
           <SectionHeading
             eyebrow="Our Products"
             title="Spices We Export"
-            subtitle="Three of India's finest spices, sourced directly from Kerala's heartland and prepared to the highest export standards."
+            subtitle="Four of India's finest spices, sourced directly from their origins and prepared to the highest export standards."
             align="center"
           />
         </div>
 
-        {/* 4.1 + 4.2 — taller images, white cards with gold border, shadow lift on hover */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* 4.1 + 4.2 — portrait crops, white cards with gold border, tinted lift on hover */}
+        <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {products.map((product) => (
-            <div
+            <RevealItem
               key={product.slug}
-              className="group bg-white border border-gold/20 hover:border-gold/60 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
+              className="group bg-white border border-gold/20 hover:border-gold/60 shadow-lift-1 hover:shadow-lift-3 transition-all duration-500 ease-brand flex flex-col"
             >
-              {/* 4.1 — taller image */}
-              <div className="relative h-72 overflow-hidden">
+              {/* Portrait crop — landscape reads as catalogue, portrait reads as premium */}
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.alt}
                   fill
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-108"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
 
@@ -69,19 +84,21 @@ export default function ProductsPreview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-brown/60 via-brown/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Floating tag — slides up on hover */}
-                <div className="absolute bottom-4 left-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-                  <span className="font-inter text-[10px] font-semibold uppercase tracking-[0.18em] text-white bg-gold/90 px-2.5 py-1">
+                <div className="absolute bottom-4 left-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 ease-brand">
+                  <span className="font-inter text-[10px] font-semibold uppercase tracking-[0.18em] text-ink bg-gold px-2.5 py-1">
                     {product.tag}
                   </span>
                 </div>
 
-                <ImageSpecBadge
-                  label={`${product.name} Product Photo`}
-                  ratio="Square"
-                  size="1800×1800"
-                  format="JPG or PNG"
-                  fileName={product.image.split("/").pop() as string}
-                />
+                {!product.photoConfirmed && (
+                  <ImageSpecBadge
+                    label={`${product.name} Product Photo`}
+                    ratio="Square"
+                    size="1800×1800"
+                    format="JPG or PNG"
+                    fileName={product.image.split("/").pop() as string}
+                  />
+                )}
               </div>
 
               {/* Content */}
@@ -106,19 +123,19 @@ export default function ProductsPreview() {
                   <span className="transition-transform duration-200 group-hover/link:translate-x-1">→</span>
                 </Link>
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
         {/* 4.5 — single border, uppercase, generous padding */}
-        <div className="mt-12 text-center">
-          <Link
+        <Reveal className="mt-12 text-center" y={16}>
+          <PressableLink
             href="/products"
-            className="font-inter text-sm font-semibold tracking-[0.12em] uppercase px-10 py-3.5 rounded-none border border-forest text-forest hover:bg-forest hover:text-white transition-colors duration-300"
+            className="inline-block font-inter text-sm font-semibold tracking-[0.12em] uppercase px-10 py-3.5 rounded-none border border-forest text-forest hover:bg-forest hover:text-white transition-colors duration-300"
           >
             View All Products
-          </Link>
-        </div>
+          </PressableLink>
+        </Reveal>
       </div>
     </section>
   );

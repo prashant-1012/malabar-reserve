@@ -21,6 +21,9 @@ export default function ImageSpecBadge({
   format = "JPG",
   position = "bottom",
 }: ImageSpecBadgeProps) {
+  // TODO: REMOVE BEFORE LAUNCH — set NEXT_PUBLIC_SHOW_IMAGE_SPECS=false in the
+  // Vercel project env, then strip every <ImageSpecBadge> usage. Kept visible
+  // for now because the client is still reviewing which photos to supply.
   if (process.env.NEXT_PUBLIC_SHOW_IMAGE_SPECS === "false") return null;
 
   const edge = position === "top" ? "top-0 border-b-2" : "bottom-0 border-t-2";

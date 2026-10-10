@@ -2,10 +2,12 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import { SITE_URL, OG_IMAGE } from "@/lib/site";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import { Toaster } from "react-hot-toast";
+import MotionProvider from "@/components/motion/MotionProvider";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     "spice import India",
     "FSSAI certified spices",
   ],
-  authors: [{ name: "Malabar Reserve", url: "https://malabar-reserve.vercel.app" }],
+  authors: [{ name: "Malabar Reserve", url: SITE_URL }],
   category: "Food & Beverage Export",
   openGraph: {
     type: "website",
@@ -46,11 +48,11 @@ export const metadata: Metadata = {
     title: "Malabar Reserve | Premium Indian Spice Exporters",
     description:
       "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
-    url: "https://malabar-reserve.vercel.app",
+    url: SITE_URL,
     locale: "en_US",
     images: [
       {
-        url: "https://malabar-reserve.vercel.app/photos-to-use/ogimage2.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Malabar Reserve – Premium Indian Spice Exporters",
@@ -62,11 +64,9 @@ export const metadata: Metadata = {
     title: "Malabar Reserve | Premium Indian Spice Exporters",
     description:
       "Premium quality spices, ethically sourced and expertly exported from the heart of Kerala to global markets.",
-    images: ["https://malabar-reserve.vercel.app/photos-to-use/ogimage2.jpg"],
+    images: [OG_IMAGE],
   },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://malabar-reserve.vercel.app"
-  ),
+  metadataBase: new URL(SITE_URL),
   robots: {
     index: true,
     follow: true,
@@ -90,6 +90,12 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/favicon-192.png" />
+        {/* Scroll-reveal elements render with their hidden transform inline, so
+            without JS every section heading and card would stay invisible.
+            Crawlers still get the text either way, but humans need this. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="antialiased">
         <Toaster
@@ -98,10 +104,12 @@ export default function RootLayout({
             style: { fontFamily: "var(--font-inter)" },
           }}
         />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <MotionProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </MotionProvider>
       </body>
     </html>
   );

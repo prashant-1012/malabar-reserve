@@ -14,11 +14,23 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair;
   }
+
+  /* Keyboard focus. Previously only the contact form had any focus styling —
+     every nav link, CTA and card link was keyboard-invisible (WCAG 2.4.7). */
+  :where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-white rounded-[2px];
+  }
+
+  /* Dark sections need the offset to match their own background, or the ring
+     draws a white halo. Add `on-dark` to any forest/black section wrapper. */
+  .on-dark :where(a, button, [role="button"]):focus-visible {
+    @apply ring-offset-forest;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gold text-brown font-inter font-semibold px-6 py-3 rounded hover:bg-gold-dark transition-colors duration-200;
+    @apply bg-gold text-ink font-inter font-semibold px-6 py-3 rounded hover:bg-gold-dark transition-colors duration-200;
   }
 
   .btn-outline {
@@ -31,5 +43,75 @@
 
   .container-padding {
     @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Metallic gold CTA with a sheen sweep on hover. Used on primary CTAs in
+     place of flat `bg-gold`. The sweep is a transform, so it stays on the
+     compositor. */
+  .btn-gold {
+    @apply relative overflow-hidden bg-gold-sheen text-ink isolate shadow-lift-1;
+    transition:
+      filter 250ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .btn-gold::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 100%
+    );
+    transform: translateX(-180%) skewX(-18deg);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .btn-gold:hover {
+    filter: brightness(1.07) saturate(1.05);
+    @apply shadow-glow-gold;
+  }
+
+  .btn-gold:hover::after {
+    transform: translateX(380%) skewX(-18deg);
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@layer utilities {
+  /* Paper grain. Turns flat #F6EDE3 into something that reads as paper rather
+     than as a div. Inline SVG turbulence — no network request, ~400 bytes.
+     Apply to a `pointer-events-none absolute inset-0` child of a section. */
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Tabular figures for any numeric run, so digits don't jitter when they change. */
+  .nums-tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+/* Honour the OS setting. Must be in place before motion is added, not after.
+   Framer primitives also check `useReducedMotion()` and render statically —
+   this covers the CSS-only transitions and `animate-*` utilities. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }

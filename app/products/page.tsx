@@ -7,6 +7,7 @@ import {
   Package,
   Globe,
   Wind,
+  Flame,
 } from "lucide-react";
 import ProductSection from "@/components/products/ProductSection";
 import PackagingSolutions from "@/components/products/PackagingSolutions";
@@ -14,12 +15,13 @@ import PackagingSolutions from "@/components/products/PackagingSolutions";
 export const metadata: Metadata = {
   title: "Our Products",
   description:
-    "Explore Malabar Reserve's premium export spices: Black Pepper, Green Cardamom, and Turmeric — sourced from India's finest farms.",
+    "Explore Malabar Reserve's premium export spices: Black Pepper, Green Cardamom, Turmeric, and Red Chilli — sourced from India's finest farms.",
   keywords: [
     "Indian spices for export",
     "black pepper wholesale",
     "green cardamom bulk supply",
     "turmeric export",
+    "red chilli export India",
     "Kerala spice catalogue",
     "spice packaging solutions",
     "private label spices India",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Malabar Reserve",
     title: "Our Products | Malabar Reserve",
     description:
-      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Turmeric in bulk and custom packaging.",
+      "Premium Indian spices for global import: Black Pepper, Green Cardamom, Turmeric, and Red Chilli in bulk and custom packaging.",
     url: "https://malabarreserve.co/products",
     locale: "en_US",
   },
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Products | Malabar Reserve",
     description:
-      "Premium Indian spices for global import: Black Pepper, Green Cardamom, and Turmeric in bulk and custom packaging.",
+      "Premium Indian spices for global import: Black Pepper, Green Cardamom, Turmeric, and Red Chilli in bulk and custom packaging.",
   },
 };
 
@@ -67,8 +69,8 @@ export default function ProductsPage() {
             Our Products
           </h1>
           <p className="font-inter text-base text-white/65 max-w-xl leading-relaxed">
-            Three of India&apos;s finest spices, sourced directly from India&apos;s premier growing
-            regions and prepared to the highest export standards.
+            Four of India&apos;s finest spices, sourced directly from their origins and prepared
+            to the highest export standards.
           </p>
         </div>
       </section>
@@ -148,7 +150,34 @@ export default function ProductsPage() {
         ]}
       />
 
-      {/* ── 4 & 5. Packaging Solutions ───────────────────────── */}
+      {/* ── 4. Red Chilli ─────────────────────────────────────── */}
+      <ProductSection
+        eyebrow="Product 04"
+        title="Red Chilli"
+        description="Sun-dried red chillies sourced from India's finest growing regions — prized for their vibrant colour, bold heat, and export-grade consistency. Available across mild to extra-hot grades for culinary, retail, and industrial applications."
+        bullets={[
+          "Kashmiri Red Chilli (Mild, Vibrant Colour)",
+          "Mid Spicy Red Chilli",
+          "Spicy ++ Red Chilli (Extra Hot)",
+          "Whole & Powder Forms",
+          "Custom Packaging Available",
+        ]}
+        imageSrc="/photos-to-use/red-chilli.png"
+        imageAlt="Vibrant red chilli powder and sun-dried whole chillies in a wooden bowl"
+        imagePosition="left"
+        href="/products/red-chilli"
+        bgColor="cream"
+        photoConfirmed
+        featureIcons={[
+          { icon: Sprout, label: "Carefully Sourced From Trusted Farms" },
+          { icon: Flame, label: "Mild to Extra-Hot Grades" },
+          { icon: Award, label: "Export-Grade Quality" },
+          { icon: Package, label: "Customized Packaging Solutions" },
+          { icon: Globe, label: "Trusted by Customers Worldwide" },
+        ]}
+      />
+
+      {/* ── 5 & 6. Packaging Solutions ───────────────────────── */}
       <PackagingSolutions />
     </>
   );

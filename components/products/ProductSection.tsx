@@ -19,6 +19,7 @@ interface ProductSectionProps {
   href: string;
   featureIcons?: FeatureIcon[];
   bgColor?: "white" | "cream";
+  photoConfirmed?: boolean;
 }
 
 export default function ProductSection({
@@ -32,6 +33,7 @@ export default function ProductSection({
   href,
   featureIcons = [],
   bgColor = "white",
+  photoConfirmed = false,
 }: ProductSectionProps) {
   const bg = bgColor === "cream" ? "bg-cream" : "bg-white";
   const imageFirst = imagePosition === "left";
@@ -56,13 +58,15 @@ export default function ProductSection({
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 ring-1 ring-gold/20 rounded-xl pointer-events-none" />
-            <ImageSpecBadge
-              label={`${title} Product Photo`}
-              ratio="Square"
-              size="1800×1800"
-              format="JPG or PNG"
-              fileName={imageSrc.split("/").pop() as string}
-            />
+            {!photoConfirmed && (
+              <ImageSpecBadge
+                label={`${title} Product Photo`}
+                ratio="Square"
+                size="1800×1800"
+                format="JPG or PNG"
+                fileName={imageSrc.split("/").pop() as string}
+              />
+            )}
           </div>
 
           {/* Text content */}

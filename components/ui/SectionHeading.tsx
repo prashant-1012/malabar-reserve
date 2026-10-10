@@ -1,3 +1,9 @@
+"use client";
+
+import { m, useReducedMotion } from "framer-motion";
+import SplitHeading from "@/components/motion/SplitHeading";
+import { DUR, EASE, VIEWPORT } from "@/lib/motion";
+
 interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
@@ -5,6 +11,10 @@ interface SectionHeadingProps {
   align?: "center" | "left";
   theme?: "dark" | "light";
   ornament?: boolean;
+  /** Heading level. Defaults to h2; pass "h1" on page heroes. */
+  as?: "h1" | "h2" | "h3";
+  /** Set false to render statically — use when the heading is the LCP element. */
+  animate?: boolean;
 }
 
 export default function SectionHeading({
@@ -14,29 +24,52 @@ export default function SectionHeading({
   align = "center",
   theme = "dark",
   ornament = false,
+  as = "h2",
+  animate = true,
 }: SectionHeadingProps) {
   const isCenter = align === "center";
   const isLight = theme === "light";
+  const reduced = useReducedMotion();
+  const still = !animate || reduced;
 
-  return (
-    <div className={`flex flex-col gap-3 ${isCenter ? "items-center text-center" : "items-start text-left"}`}>
+  const titleClass = `font-playfair font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-display-xs md:tracking-display-sm ${
+    isLight ? "text-white" : "text-brown"
+  }`;
+
+  const Tag = as;
+
+  // Children rise in sequence: eyebrow, then the masked title, then ornament
+  // and subtitle. Two animated things per viewport is the budget — the title's
+  // clip reveal is the hero, everything else is a quiet fade behind it.
+  const item = {
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: DUR.base, ease: EASE } },
+  };
+
+  const content = (
+    <>
       {eyebrow && (
-        <span className="font-inter text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+        <m.span
+          data-reveal
+          variants={still ? undefined : item}
+          className="font-inter text-xs font-semibold uppercase tracking-[0.2em] text-gold"
+        >
           {eyebrow}
-        </span>
+        </m.span>
       )}
 
-      <h2
-        className={`font-playfair font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight ${
-          isLight ? "text-white" : "text-brown"
-        }`}
-      >
-        {title}
-      </h2>
+      {still ? (
+        <Tag className={titleClass}>{title}</Tag>
+      ) : (
+        <SplitHeading text={title} as={Tag} className={titleClass} nested />
+      )}
 
-      {/* Gold ornamental divider — used on About section */}
       {ornament && (
-        <div className={`flex items-center gap-2 ${isCenter ? "justify-center" : ""}`}>
+        <m.div
+          data-reveal
+          variants={still ? undefined : item}
+          className={`flex items-center gap-2 ${isCenter ? "justify-center" : ""}`}
+        >
           <div className="h-px w-8 bg-gold" />
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path
@@ -46,18 +79,43 @@ export default function SectionHeading({
             <line x1="8" y1="1" x2="8" y2="15" stroke="#1C2417" strokeWidth="0.8" strokeLinecap="round" />
           </svg>
           <div className="h-px w-8 bg-gold" />
-        </div>
+        </m.div>
       )}
 
       {subtitle && (
-        <p
+        <m.p
+          data-reveal
+          variants={still ? undefined : item}
           className={`font-inter text-base md:text-lg leading-relaxed max-w-2xl ${
             isLight ? "text-white/75" : "text-brown/65"
           }`}
         >
           {subtitle}
-        </p>
+        </m.p>
       )}
-    </div>
+    </>
+  );
+
+  const wrapperClass = `flex flex-col gap-3 ${
+    isCenter ? "items-center text-center" : "items-start text-left"
+  }`;
+
+  if (still) {
+    return <div className={wrapperClass}>{content}</div>;
+  }
+
+  return (
+    <m.div
+      className={wrapperClass}
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.08 } },
+      }}
+    >
+      {content}
+    </m.div>
   );
 }

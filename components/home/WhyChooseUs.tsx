@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { Award, Handshake, Globe, Box, Check, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
+import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
 import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 
 const features: { icon: LucideIcon; title: string; description: string }[] = [
@@ -53,19 +56,23 @@ export default function WhyChooseUs() {
                 theme="dark"
               />
 
-              <div className="flex flex-col gap-2">
+              <RevealGroup className="flex flex-col gap-2">
                 {features.map(({ icon: Icon, title, description }, index) => {
                   const isActive = activeFeature === index;
                   return (
-                    <div
+                    <RevealItem
                       key={title}
-                      onMouseEnter={() => setActiveFeature(index)}
-                      onMouseLeave={() => setActiveFeature(null)}
-                      className={`flex items-start gap-4 p-4 border-l-2 transition-all duration-300 cursor-default ${
+                      y={16}
+                      className={`flex items-start gap-4 p-4 border-l-2 transition-all duration-300 ease-brand cursor-default ${
                         isActive
                           ? "border-gold bg-cream/60"
                           : "border-transparent"
                       }`}
+                    >
+                    <div
+                      onMouseEnter={() => setActiveFeature(index)}
+                      onMouseLeave={() => setActiveFeature(null)}
+                      className="flex items-start gap-4 w-full"
                     >
                       {/* Default: original icon in forest style. Hover: Check in gold */}
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-300 ${
@@ -87,24 +94,29 @@ export default function WhyChooseUs() {
                         <p className="font-inter text-sm text-brown/60 leading-relaxed">{description}</p>
                       </div>
                     </div>
+                    </RevealItem>
                   );
                 })}
-              </div>
+              </RevealGroup>
             </div>
 
             {/* Right: image — sharp corners, gold border, natural aspect ratio */}
-            <div className="relative w-full overflow-hidden border border-gold/25 shadow-xl group" style={{ aspectRatio: "4/3" }}>
-              <Image
-                src="/photos-to-use/why-partner-us.png"
-                alt="Premium spice bowls — black pepper, green cardamom, and turmeric — flat lay"
-                fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              {/* Subtle gold shimmer on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <ImageSpecBadge label="Why Choose Us Photo" ratio="4:3" size="1600×1200" fileName="why-partner-us.png" />
-            </div>
+            <Reveal y={32}>
+              <div className="relative w-full overflow-hidden border border-gold/25 shadow-lift-3 group" style={{ aspectRatio: "4/3" }}>
+                <Parallax distance={22} className="absolute inset-0 -top-6 -bottom-6">
+                  <Image
+                    src="/photos-to-use/why-partner-us.png"
+                    alt="Premium spice bowls — black pepper, green cardamom, and turmeric — flat lay"
+                    fill
+                    className="object-cover object-center transition-transform duration-700 ease-brand group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </Parallax>
+                {/* Subtle gold shimmer on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <ImageSpecBadge label="Why Choose Us Photo" ratio="4:3" size="1600×1200" fileName="why-partner-us.png" />
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

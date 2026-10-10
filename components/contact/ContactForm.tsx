@@ -3,12 +3,17 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Send } from "lucide-react";
+import Select, { type SelectOption } from "@/components/ui/Select";
 
-const products = [
-  "Black Pepper",
-  "Green Cardamom",
-  "Turmeric",
-  "All Products",
+// Keep in sync with the navbar dropdown and app/products/*.
+// Red Chilli was missing here, so prospects couldn't express interest in a
+// product the site actively sells.
+const products: SelectOption[] = [
+  { value: "Black Pepper", label: "Black Pepper", hint: "Kerala" },
+  { value: "Green Cardamom", label: "Green Cardamom", hint: "Idukki" },
+  { value: "Turmeric", label: "Turmeric", hint: "High Curcumin" },
+  { value: "Red Chilli", label: "Red Chilli", hint: "Kashmiri–Hot" },
+  { value: "All Products", label: "All Products" },
 ];
 
 interface FormState {
@@ -34,7 +39,7 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -61,7 +66,7 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    "w-full font-inter text-sm text-brown bg-white border border-cream rounded-lg px-4 py-3 placeholder:text-brown/35 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors duration-200";
+    "w-full font-inter text-sm text-brown bg-white border border-cream rounded-lg px-4 py-3 placeholder:text-brown/70 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors duration-200";
 
   const labelClass = "block font-inter text-xs font-semibold uppercase tracking-wider text-brown/60 mb-1.5";
 
@@ -123,19 +128,15 @@ export default function ContactForm() {
           <label htmlFor="product" className={labelClass}>
             Product Interest <span className="text-gold">*</span>
           </label>
-          <select
+          <Select
             id="product"
             name="product"
             value={form.product}
-            onChange={handleChange}
-            className={`${inputClass} cursor-pointer`}
+            onValueChange={(product) => setForm((prev) => ({ ...prev, product }))}
+            options={products}
+            placeholder="Select a product"
             required
-          >
-            <option value="" disabled>Select a product</option>
-            {products.map((p) => (
-              <option key={p} value={p}>{p}</option>
-            ))}
-          </select>
+          />
         </div>
       </div>
 

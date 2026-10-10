@@ -200,12 +200,6 @@ export default function ContactPage() {
                   View Products
                 </Link>
                 <Link
-                  href="/industries"
-                  className="font-inter text-xs font-semibold px-3 py-1.5 rounded-full border border-forest/20 text-forest hover:bg-forest hover:text-white hover:border-forest transition-colors duration-200"
-                >
-                  Industries
-                </Link>
-                <Link
                   href="/about"
                   className="font-inter text-xs font-semibold px-3 py-1.5 rounded-full border border-forest/20 text-forest hover:bg-forest hover:text-white hover:border-forest transition-colors duration-200"
                 >

@@ -10,6 +10,7 @@ interface ProductDetailHeroProps {
   imageAlt: string;
   breadcrumb: string;
   imageFileName: string;
+  photoConfirmed?: boolean;
 }
 
 export default function ProductDetailHero({
@@ -19,6 +20,7 @@ export default function ProductDetailHero({
   imageAlt,
   breadcrumb,
   imageFileName,
+  photoConfirmed = false,
 }: ProductDetailHeroProps) {
   return (
     <section className="relative w-full h-[60vh] min-h-[420px] max-h-[580px] overflow-hidden">
@@ -32,13 +34,15 @@ export default function ProductDetailHero({
       />
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
-      <ImageSpecBadge
-        label={`${title} Banner Photo`}
-        ratio="Wide 3:1"
-        size="2400×800"
-        fileName={imageFileName}
-        position="top"
-      />
+      {!photoConfirmed && (
+        <ImageSpecBadge
+          label={`${title} Banner Photo`}
+          ratio="Wide 3:1"
+          size="2400×800"
+          fileName={imageFileName}
+          position="top"
+        />
+      )}
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-end pb-12 md:pb-16">

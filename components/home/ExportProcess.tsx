@@ -5,18 +5,29 @@ import { useState } from "react";
 import { Leaf, Search, Package, Globe } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
+import Grain from "@/components/ui/Grain";
+import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
 
-const steps = [
+const steps: {
+  number: string;
+  icon: typeof Leaf;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  fileName: string;
+  photoConfirmed?: boolean;
+}[] = [
   {
     number: "01",
     icon: Leaf,
     title: "Origin Selection",
     description:
       "We partner with select growers across Kerala's renowned spice-producing regions to source only the finest quality harvests.",
-    image:
-      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80",
-    alt: "Spice farmer harvesting black pepper in Kerala",
+    image: "/photos-to-use/process-origin-selection.webp",
+    alt: "Growers hand-picking pepper vines in the Western Ghats at sunrise",
     fileName: "export-origin-selection.jpg",
+    photoConfirmed: true,
   },
   {
     number: "02",
@@ -35,10 +46,10 @@ const steps = [
     title: "Export-Ready Processing",
     description:
       "Using stringent quality protocols, our spices are processed and packed to preserve freshness and meet global food safety standards.",
-    image:
-      "https://images.unsplash.com/photo-1565118531796-763e5082d113?w=800&q=80",
-    alt: "Hygienic spice processing and packaging facility",
+    image: "/photos-to-use/process-processing.webp",
+    alt: "Malabar Reserve processing floor with graded spices and packing lines",
     fileName: "export-processing.jpg",
+    photoConfirmed: true,
   },
   {
     number: "04",
@@ -46,10 +57,10 @@ const steps = [
     title: "Worldwide Distribution",
     description:
       "Backed by efficient logistics and export expertise, we deliver authentic Indian spices to international markets with reliability and precision.",
-    image:
-      "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80",
-    alt: "Shipping containers at international port for global export",
+    image: "/photos-to-use/process-distribution.webp",
+    alt: "Palletised spice cartons loading at a container port at sunset",
     fileName: "export-distribution.jpg",
+    photoConfirmed: true,
   },
 ];
 
@@ -57,8 +68,9 @@ export default function ExportProcess() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
-    <section className="bg-cream section-padding border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-cream section-padding border-b border-gold/10">
+      <Grain />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 5.1 — heading + ornaments in a single aligned flex row */}
         <div className="mb-14 text-center">
@@ -83,20 +95,19 @@ export default function ExportProcess() {
           <div className="hidden lg:block absolute top-[88px] left-[12.5%] right-[12.5%] h-px bg-gold/30 z-0" />
 
           {/* 5.2 + 5.3 + 5.4 + 5.5 — step cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               const isActive = activeStep === index;
 
               return (
+                <RevealItem key={step.number} className="h-full">
                 <div
-                  key={step.number}
                   onMouseEnter={() => setActiveStep(index)}
                   onMouseLeave={() => setActiveStep(null)}
-                  className={`group bg-white border flex flex-col cursor-default transition-all duration-500 ${
+                  className={`group bg-white border h-full flex flex-col cursor-default transition-all duration-500 ease-brand ${
                     isActive
-                      ? "border-gold/60 shadow-xl -translate-y-1"
-                      : "border-gold/15 shadow-md"
+                      ? "border-gold/60 shadow-lift-3 -translate-y-1"
+                      : "border-gold/15 shadow-lift-1"
                   }`}
                 >
                   {/* 5.3 — taller image */}
@@ -117,7 +128,9 @@ export default function ExportProcess() {
                       <span className="font-playfair font-bold text-sm text-gold">{step.number}</span>
                     </div>
 
-                    <ImageSpecBadge label={`${step.title} Photo`} ratio="4:3" size="1200×900" fileName={step.fileName} />
+                    {!step.photoConfirmed && (
+                      <ImageSpecBadge label={`${step.title} Photo`} ratio="4:3" size="1200×900" fileName={step.fileName} />
+                    )}
                   </div>
 
                   {/* 5.5 — icon removed, step title + gold rule + description only */}
@@ -142,15 +155,17 @@ export default function ExportProcess() {
                     </div>
                   </div>
                 </div>
+                </RevealItem>
               );
             })}
-          </div>
+          </RevealGroup>
         </div>
 
         {/* 5.6 — larger, more spacious banner */}
-        <div className="mt-12 bg-forest py-8 px-12 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-          <Globe size={22} className="text-gold flex-shrink-0" />
-          <p className="font-inter text-base font-semibold uppercase tracking-[0.2em] text-white">
+        <div className="on-dark relative overflow-hidden mt-12 bg-forest py-8 px-12 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+          <Grain opacity={0.05} />
+          <Globe size={22} className="relative z-10 text-gold flex-shrink-0" />
+          <p className="relative z-10 font-inter text-base font-semibold uppercase tracking-[0.2em] text-white">
             Quality Spices.{" "}
             <span className="text-gold">Trusted Process.</span>{" "}
             Worldwide Reach.
