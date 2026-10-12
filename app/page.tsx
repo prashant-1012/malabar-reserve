@@ -57,7 +57,8 @@ export default function HomePage() {
       <HeroSection />
       <AboutPreview />
       <ProductsPreview />
-      <WhoWeServe />
+      {/* "Who We Serve: Built for the Businesses We Supply" section hidden */}
+      {/* <WhoWeServe /> */}
       <ExportProcess />
       <PackagingBand />
       <WhyChooseUs />

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 import Grain from "@/components/ui/Grain";
 import Reveal from "@/components/motion/Reveal";
 import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
@@ -89,16 +88,6 @@ export default function ProductsPreview() {
                     {product.tag}
                   </span>
                 </div>
-
-                {!product.photoConfirmed && (
-                  <ImageSpecBadge
-                    label={`${product.name} Product Photo`}
-                    ratio="Square"
-                    size="1800×1800"
-                    format="JPG or PNG"
-                    fileName={product.image.split("/").pop() as string}
-                  />
-                )}
               </div>
 
               {/* Content */}

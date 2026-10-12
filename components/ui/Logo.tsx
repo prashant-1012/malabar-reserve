@@ -3,6 +3,7 @@ import Image from "next/image";
 
 interface LogoProps {
   variant?: "dark" | "light";
+  className?: string;
 }
 
 /**
@@ -15,12 +16,12 @@ interface LogoProps {
  * (see LOGO_JOBS in scripts/prepare-images.mjs), so the light/dark variants and
  * their transparency are preserved exactly.
  */
-export default function Logo({ variant = "dark" }: LogoProps) {
+export default function Logo({ variant = "dark", className = "" }: LogoProps) {
   return (
     <Link
       href="/"
       aria-label="Malabar Reserve — home"
-      className="flex items-center gap-2.5 lg:gap-3.5 flex-shrink-0 group"
+      className={`flex items-center gap-2 lg:gap-3 flex-shrink-0 group ${className}`}
     >
       <Image
         src={`/photos-to-use/logo-mark-${variant}.png`}
@@ -28,7 +29,7 @@ export default function Logo({ variant = "dark" }: LogoProps) {
         width={236}
         height={236}
         priority
-        className="h-11 lg:h-16 w-auto transition-transform duration-500 ease-brand group-hover:scale-105"
+        className="h-8 lg:h-10 w-auto transition-transform duration-500 ease-brand group-hover:scale-105"
       />
       <Image
         src={`/photos-to-use/logo-wordmark-${variant}.png`}
@@ -36,7 +37,7 @@ export default function Logo({ variant = "dark" }: LogoProps) {
         width={1019}
         height={235}
         priority
-        className="h-8 lg:h-11 w-auto"
+        className="h-7 lg:h-8 w-auto"
       />
     </Link>
   );

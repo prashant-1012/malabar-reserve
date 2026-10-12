@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Leaf, Handshake, Globe, ShieldCheck } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ImageSpecBadge from "@/components/ui/ImageSpecBadge";
 import Grain from "@/components/ui/Grain";
 import Reveal from "@/components/motion/Reveal";
 import Parallax from "@/components/motion/Parallax";
@@ -40,7 +39,6 @@ export default function AboutPreview() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </Parallax>
-              <ImageSpecBadge label="About / Story Photo" ratio="Landscape" size="2400×1600" fileName="about-us.png" />
             </div>
           </Reveal>
 
@@ -48,7 +46,7 @@ export default function AboutPreview() {
           <div className="flex flex-col gap-6 order-last lg:order-first">
             <SectionHeading
               eyebrow="About Us"
-              title="The Heritage of India's Authentic GI-Tagged Spices"
+              title="The Heritage of India's Authentic Spices"
               align="left"
               theme="dark"
               ornament
@@ -56,7 +54,7 @@ export default function AboutPreview() {
 
             {/* 3.2 + 3.3 — larger text, collapsed to one strong paragraph */}
             <Reveal as="p" y={16} className="font-inter text-base sm:text-lg text-brown/70 leading-relaxed">
-              Malabar Reserve sources and exports India&apos;s distinguished GI-tagged spices,
+              Malabar Reserve sources and exports India&apos;s distinguished spices,
               including Malabar Black Pepper, Alleppey Green Cardamom, and other origin-certified
               treasures, to importers, wholesalers, and food brands worldwide. The historic Malabar
               spice route embodies authenticity, traceability, exceptional quality, and a commitment

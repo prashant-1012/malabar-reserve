@@ -1,33 +1,36 @@
+import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 import Reveal from "@/components/motion/Reveal";
 import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
 
-/**
- * These certifications are claimed in page metadata and product spec tables but
- * have never appeared in the design. An importer evaluating a supplier is
- * looking for exactly this.
- *
- * ── AWAITING ASSETS ──────────────────────────────────────────────────────────
- * The client has not supplied logo files yet. Each entry renders a typographic
- * placeholder at the final mark's footprint (160x80), so dropping the real
- * artwork in later is a file swap, not a rebuild:
- *
- *   1. Save SVG (preferred) or transparent PNG, min 400px wide, to
- *      public/photos-to-use/cert-<slug>.svg
- *   2. Set `logo: "/photos-to-use/cert-<slug>.svg"` on the entry below
- *
- * See new-docs/2026-10-10-ui-ux-premium-uplift-plan.md §6.
- */
 const certifications: {
   name: string;
   full: string;
-  logo?: string;
+  logo: string;
+  width: number;
+  height: number;
 }[] = [
-  { name: "FSSAI", full: "Food Safety and Standards Authority of India" },
-  { name: "ISO 22000", full: "Food Safety Management Systems" },
-  { name: "APEDA", full: "Agricultural & Processed Food Products Export Development Authority" },
-  { name: "Spices Board", full: "Spices Board of India" },
-  { name: "GI Tagged", full: "Geographical Indication certified origin" },
+  {
+    name: "FSSAI",
+    full: "Food Safety and Standards Authority of India (FSSAI Certified)",
+    logo: "/photos-to-use/cert-fssai.webp",
+    width: 140,
+    height: 70,
+  },
+  {
+    name: "ISO 22000",
+    full: "ISO 22000 Certified — Food Safety Management Systems",
+    logo: "/photos-to-use/cert-iso22000.webp",
+    width: 155,
+    height: 62,
+  },
+  {
+    name: "APEDA",
+    full: "Agricultural & Processed Food Products Export Development Authority",
+    logo: "/photos-to-use/cert-apeda.webp",
+    width: 130,
+    height: 75,
+  },
 ];
 
 export default function Certifications() {
@@ -46,7 +49,7 @@ export default function Certifications() {
         </Reveal>
 
         <RevealGroup
-          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 sm:gap-x-14"
+          className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 lg:gap-x-24"
           as="ul"
           stagger={0.07}
         >
@@ -54,16 +57,16 @@ export default function Certifications() {
             <RevealItem key={cert.name} as="li">
               <div
                 title={cert.full}
-                className="group grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-400 ease-brand"
+                className="group flex items-center justify-center grayscale hover:grayscale-0 opacity-75 hover:opacity-100 transition-all duration-400 ease-brand"
               >
-                {/* Placeholder mark — replace with <Image> once logos arrive */}
-                <div className="w-[160px] h-[80px] flex flex-col items-center justify-center gap-1 border border-dashed border-gold/40 group-hover:border-gold/80 transition-colors duration-400">
-                  <span className="font-playfair font-bold text-base text-brown leading-none">
-                    {cert.name}
-                  </span>
-                  <span className="font-inter text-[9px] uppercase tracking-[0.18em] text-gold/80">
-                    Certified
-                  </span>
+                <div className="relative w-[150px] sm:w-[170px] h-[65px] sm:h-[75px] flex items-center justify-center">
+                  <Image
+                    src={cert.logo}
+                    alt={cert.name}
+                    width={cert.width}
+                    height={cert.height}
+                    className="max-h-[55px] sm:max-h-[65px] w-auto object-contain transition-transform duration-300 ease-brand group-hover:scale-105"
+                  />
                 </div>
                 <span className="sr-only">{cert.full}</span>
               </div>

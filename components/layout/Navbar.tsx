@@ -102,7 +102,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-24">
+        <div className="flex items-center justify-between h-14 lg:h-18">
 
           {/* Logo — light on transparent, dark once scrolled */}
           <Logo variant={isTransparent ? "light" : "dark"} />
@@ -148,7 +148,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <PressableLink
               href="/contact"
-              className="btn-gold inline-block font-inter text-sm font-semibold tracking-[0.08em] px-7 py-3 rounded-none"
+              className="btn-gold inline-block font-inter text-sm font-semibold tracking-[0.08em] px-6 py-2.5 rounded-none"
             >
               Request a Quote
             </PressableLink>

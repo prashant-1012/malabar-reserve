@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  "GI-Tagged Alleppey Green Cardamom",
+  "Alleppey Green Cardamom",
   "Premium Export Grades",
   "Size-Graded Cardamom Pods",
   "Bulk Supply for Global Markets",
@@ -82,12 +82,12 @@ export default function GreenCardamomPage() {
             <div className="flex flex-col gap-5">
               <SectionHeading
                 eyebrow="Product Overview"
-                title="About Our GI-Tagged Alleppey Green Cardamom"
+                title="About Our Alleppey Green Cardamom"
                 align="left"
               />
               <div className="flex flex-col gap-4 font-inter text-sm text-brown/70 leading-relaxed">
                 <p>
-                  Often referred to as the &ldquo;Queen of Spices,&rdquo; GI-Tagged Alleppey Green
+                  Often referred to as the &ldquo;Queen of Spices,&rdquo; Alleppey Green
                   Cardamom is treasured for its vibrant green pods, intense aroma, and naturally
                   sweet, complex flavour. Grown in the mist-covered hills of Kerala&apos;s Western
                   Ghats.

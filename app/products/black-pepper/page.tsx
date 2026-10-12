@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  "GI-Tagged Malabar Pepper",
+  "Malabar Pepper",
   "Premium Export Grades",
   "Steam-Sterilized Pepper",
   "Bulk Supply for Global Markets",
@@ -83,12 +83,12 @@ export default function BlackPepperPage() {
             <div className="flex flex-col gap-5">
               <SectionHeading
                 eyebrow="Product Overview"
-                title="About Our GI-Tagged Malabar Pepper"
+                title="About Our Malabar Pepper"
                 align="left"
               />
               <div className="flex flex-col gap-4 font-inter text-sm text-brown/70 leading-relaxed">
                 <p>
-                  Known as the &ldquo;King of Spices,&rdquo; GI-Tagged Malabar Pepper is prized for
+                  Known as the &ldquo;King of Spices,&rdquo; Malabar Pepper is prized for
                   its bold flavour, rich aroma, and exceptional quality. Sourced from the fertile
                   spice-growing regions of Kerala&apos;s historic Malabar Coast, it reflects
                   centuries of cultivation heritage and authentic origin.

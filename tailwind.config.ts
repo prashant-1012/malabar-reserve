@@ -21,6 +21,9 @@ const config: Config = {
         playfair: ["var(--font-playfair)", "Georgia", "serif"],
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
+      spacing: {
+        18: "4.5rem",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
